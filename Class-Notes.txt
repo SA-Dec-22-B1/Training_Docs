@@ -833,3 +833,57 @@ Build Tools:
 2022-12 - https://download.eclipse.org/releases/2022-12/
 
 **************************************************************
+
+AWS Account Creation!
+
+	Understand the AWS Console / user interface!
+	Access list of services
+
+
+On-premises				
+PROD Server
+	Application Server1 (software)		- Apache tomcat / nginx -- is used to run your web applications! 50 users 
+	Application Server2 (software)		- Apache tomcat / nginx -- is used to run your web applications!  
+	Application Server3 (software)		- Apache tomcat / nginx -- is used to run your web applications!  
+	Application Server4 (software)		- Apache tomcat / nginx -- is used to run your web applications!  
+
+
+
+
+Cloud Platform
+
+
+Create the required compute devices in cloud - Virtual Machines! Window/Linux/Mac
+
+Cloud service Providers:
+	AWS, Azure, GCP, Digital Ocean, IBM Cloud 
+
+Provide free-tier account to start and explore.
+
+	Based on usage the cloud services will charged / billed.
+	Availability			1
+	Security 
+	Reliability
+	Load-balancing
+	Auto-Scaling			
+		Scale-up			1
+		Scale-down			
+	
+PROD Server
+	Application Server (software)		- Apache tomcat / nginx -- is used to run your web applications! 10000 users 
+
+Dynamic Provisioning!
+
+
+	Hosted Servers(hardware)		-- is where the appln. are deployed
+		Application Server (software)		- Apache tomcat / nginx -- is used to run your web applications!
+		
+		QA Server				10
+			Application Server (software)		- Apache tomcat / nginx -- is used to run your web applications!
+		UAT Server 				0	
+			Application Server (software)		- Apache tomcat / nginx -- is used to run your web applications!
+			
+			
+			
+		PROD Server				1
+			Application Server (software)		- Apache tomcat / nginx -- is used to run your web applications!
