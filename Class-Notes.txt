@@ -1,0 +1,835 @@
+
+
+1. Timings --> 11 - 3pm s/s 
+
+2. 1pm - brk.
+
+3. 
+
+**********
+DAY-1
+**********
+
+DevOps :
+
+	Roles :
+		Scripting Lang.
+			yaml scripts
+			python scripts 
+			groovy Scripts
+			shell Scripts
+			
+		Build and Deployment Process  
+		Teams involved in the process
+		Tools involved in the process 
+		
+
+DevOps Engg. --> Day-to-Days activities!!!!
+
+
+	DEV Team ===> Java programming Lang. - coding is done -- ? Test -- ? Deployment -- ? 
+		
+		
+		code - build - create artifacts - deploy(QA/UAT/Pre-Prod/PROD)  ---> Linux servers
+		
+
+Environments:
+		
+	Non-Prod						Production
+	(QA/UAT/Pre-Prod)				(PROD)
+	
+
+	TESTING TEAM -->
+	
+	DevOps
+	
+	
+	QA server --> Install JDK, nginx/tomcat 
+	
+	1000's 
+
+Module 1 : Application Development Fundamentals
+
+	DevOps is a process automatic the end-to-end CI-CD.
+	
+	Continuous Development
+	Continuous Integration
+	Continuous Delivery
+	Continuous Testing
+	Continuous Deployment
+	Continuous Monitoring
+	
+SDLC :
+
+	Software Development Life Cycle:
+	
+		1. Requirement Analysis
+		2. Design
+		3. Implement - Coding / Development 
+		4. Testing 
+		5. Deployment 
+		6. Monitoring
+	
+	
+	Waterfall Model: --- Implemented in a Linear Fashion.
+			
+		1. Requirement Analysis
+		2. Design
+		3. Implement - Coding / Development 
+		4. Testing 
+		5. Deployment 
+		6. Monitoring
+	
+	We can't achieve: Continuous Development, Continuous Delivery / Continuous Deployment 
+	
+	Agile Methodologies:
+	
+		1. Requirement Analysis
+		2. Design
+		3. Implement - Coding / Development 
+		4. Testing 
+		5. Deployment 
+		6. Monitoring
+	
+	We can achieve : Continuous Development, Continuous Delivery. But not Continuous Deployment 
+	
+Web Application :
+
+		Process involved --> Sign-up, Sign-in, inbox, compose  --- all these process are considerd as one whole application
+		
+	DevOps : 
+		
+	We can achieve : Continuous Development, Continuous Delivery as well as Continuous Deployment 	
+	
+
+In general, :: 	Monolith Application 
+					Process involved --> Sign-up, Sign-in, inbox, compose  --- all these process are considerd as one whole application
+				
+				Microservice based architecture
+					Process involved --> Sign-up, Sign-in, inbox, compose  --- all these process are considerd as individual Micro-service
+
+Calculator program:
+func : + - / *
+
+amazon.com ::
+
+	1. User Registeration - Sign-up
+	2. Sign-in
+	3. Search 
+	4. Add to cart
+	5. place order
+		delivery addr
+	6. payment						-- payment --> code changes -- build -- create artifacts -- deliver for further testing -- deploy to prod
+	7. track
+	
+
+
+
+How to do achieve Micro-service based Applications
+
+	JAVA 
+
+
+	DEV Team ===> Java programming Lang. - coding is done -- ? Test -- ? Deployment -- ? 
+		
+	Continuous Development	
+		code(*.java/*.jsp) - build(Compile the source code) - create artifacts(*.war) - deploy(QA/UAT/Pre-Prod/PROD)  ---> Linux servers
+		
+	Continuous Integration & Continuous Delivery  - script!!!
+		code(*.java/*.jsp) - build(Compile & create artifacts of the source code) - created artifacts(*.war) - deploy(QA/UAT/Pre-Prod/PROD)  ---> Linux servers
+		
+
+About the Type of Applications:
+
+	Desktop Application
+	Web-Based Applications
+	Web-Services
+	Mobile Applications 
+	
+
+Multi-Tier Applications
+
+	Front-end - User Interface
+	Application - Business Logic 
+	Back-end - Database
+	
+	Website :::
+	
+	amazon.com --> sign-up service 
+	
+Monolith (vs) Micro-service
+
+1 Database is used in Monolith
+
+
+
+Database ??? 
+
+Data ? --> raw text/content  ===> INDIA 
+
+Information ?			INDIA is a Country 
+
+
+Sign-Up ::
+
+
+
+Registration Form :
+
+	NAME: ZZZZZ
+	DOB: SADFSD
+	
+	Keys & Values ==> Key/value pairs
+	
+	variable 
+	int i = 5;
+
+File system:
+
+*.txt
+
+
+Relational File System
+
+*.xlx
+
+
+
+Relational Database Management system:
+
+	Rows & Columns 
+	
+	Query Language!
+		Structured Database 		-	SQL
+		Un-Structured Database		-	No-SQL 
+	
+
+Tags:
+	XML
+
+Key/value pairs 
+	JSON File
+	YAML Files
+
+Scripting Lang.
+
+Yaml scripts
+JSON --> JQs
+
+
+Transactions 
+
+	Light-weight Dbases 
+		MariaDB
+		MongoDB
+		PostgresSQL
+		SQLite
+	
+	JSON
+		JQL
+		
+	ORACLE/MYSQL
+
+DEV - Team -- Onboard any appln to devops ci/cd pipeline 
+
+	- 	Type of application
+	-	Build Application
+	- 	Create Artifacts
+	-	Which database?
+	-	How to config that database 
+
+DEV Environment:
+		
+Test Environment -- QA/UAT
+
+CI/CD Orchestration :
+	Jenkins pipelines 	--> Groovy Scripts 
+	Azure pipelines		--> yaml
+	Kubernetes			--> yaml
+	Ansible				--> yaml 
+	
+DevOps Tool :: 
+
+	Open-Source DevOps Tools		: GIT, Jenkins, Docker, Ansible, Kubernetes, Terraform, Promethus, Grafana
+	
+	Managed Services DevOps tools 	:
+		AWS			
+		Azure
+		GCP 
+
+Java Programming Language :
+
+	Open 
+
+How to build and create artifacts!!!!
+
+Continuous Development ???
+
+	Using the IDE - Integrated Development Environment 
+		Eg.: 	Visual Studio Code
+				Any Eclipe based IDE
+				PyCharm 
+				Intellij
+				Eclipe IDE
+				
+	For DevOps - Visual Studio Code.
+	
+Install Visual Studio Code :::
+https://code.visualstudio.com/download
+
+Helloworld.java 	==>		Compile 	==> 	binaries(executable 0/1) 	==>	 JVM
+
+Windows 
+
+run the same java artifacts in Linux ??
+
+Compile once & Run anywhere....
+
+DEV 
+
+TEST Environment (qa,uat)
+
+
+@@@@@@@@
+DAY-2
+@@@@@@@@
+
+
+
+Fundamentals of Programming !!!  Java.
+
+Continuous Development:::
+
+IDE --> Eclipe based IDEs for Development.
+
+Eclipe
+
+	Code
+	Build
+	Test
+	Create Artifacts
+	
+
+Programming!!!
+
+Building Blocks for Programming!
+
+SDLC 
+
+	Req. Analysis
+
+	Plan
+
+	Design
+
+	Code -- Programming Lang.
+
+	Deploy 
+	
+	Monitor 
+
+Python,
+yaml
+groovy
+shell
+
+
+Clients -- Onboard appln to devops 
+
+Assessment.
+
+	Embedded Application -- C programming
+	
+	java, python, nodejs, angular 
+	
+Algorithm!!!
+
+Psudo Code!!!
+
+Source Code / Program 
+
+Creating a Home-page for feedback form ::::
+
+Task: 
+
+	1. To find sum of two number!
+	
+		 5 + 5 = ?
+		 
+		 int a, b, c;
+		 
+		 int a = 5
+		 
+		 a = 5
+		 
+		 a = "xyz"
+		 
+		 c = a + b 
+		 print c
+		 
+		 5 + 5
+		 c = 10
+		 
+		 30 + 30 
+		 c = 60 
+		 
+		 55.5 + 80.5 		 
+		 5646456456456456 + 2342342342342342
+
+DevOps !!!!
+
+Scripts to automate CI/CD 
+
+		Templates!!!!
+		Variables!!!
+
+C Programming!
+pointers, arrays, func, 
+
+Java - String, multithreading, class, main
+
+Data.
+		constant/variable
+		Identifers
+		Memory
+		DataType 
+		Arrays -- Handle group of values of same type
+		loop
+		file Handling
+		Database 
+		Networking - Communate to other systems / servers
+		
+Syntax!!!
+
+Java Application:
+	
+Build Tools : MAVEN , GRADLE , ANT
+
+Writing a Java Program:
+
+	2. Find maximum of 10 Numbers!
+	
+		1,................,10
+	
+	3. Find maximum of n Numbers!
+	
+		1,.........................,,,,,,,	
+
+	4. Display #
+	
+	5. Display # # # #
+	
+	6. Display:
+	
+			#
+			# # 
+			# # #
+			# # # #
+			# # # # #
+			# # # # # #
+			# # # # # # #
+			# # # # # # # #	
+	
+	
+	7. Display:
+
+	
+	
+			# # # # # #
+			  # # # #
+			    # #
+				 #
+	
+	
+Program Managements
+
+
+	Java Web Appln.:
+	
+		DataBase :
+		SQL Query to fetch the record from Database 
+		username / password 
+		
+	CI/CD
+	
+		Continuous Integration --- Maven Build/Create artifacts ---> Deploying to QA ---> Deploying to UAT 
+		
+		
+		int a = 12312;
+		string x = "password";
+		
+		Sonarqube Analyzer -- used to ensure Code Quality!
+		Vulnerabilities
+		Coding Standards
+		
+		S/D 
+
+		DevOps ---->> CI / C-Delivery ====> C-Deployment 
+		
+		Dependencies & Security theads!!! --> Dev-Sec-Ops
+		
+		Source Code is stored in Source Code Repository - SCM / VCS - GIT 
+
+	Build vs Artifacts ???
+	
+	
+	sample.java  		-->  	Compile the program  	--> 	create sample.class  
+	
+	Web Application - Springboot 
+	
+	samplewebapp.java  	-->  	Compile the program  	--> 	create samplewebapp.war  
+		
+	Build is a process of compiling the source code and creating artifacts(binaries - *.war/*.jar/*.exe/*.class)
+	Build Tools : MAVEN , GRADLE , ANT
+	
+	Jenkins ---> Build Orchestration Tool - used to create CI/CD pipeline
+	
+	
+	adf
+	asdf
+	asdf
+	
+	
+	Maximum of 2 Numbers
+	Maximum of 3 Numbers
+	Maximum of 4 Numbers
+	Maximum of 200 Numbers	
+	
+	
+Dynamic Files to be create based on the API call issued.
+	json / yaml...
+
+API Call :: to deploy a service in pre-prod.
+
+PROD ;;; 
+
+Continuos Delivery --> PROD 
+
+Non-Prod							PROD 
+QA UAT 		<Approval Stage>		PROD 
+
+Release Management Team 
+Security Audit Team
+
+DevOps		===>  	DevSecOps
+
+Waterfall --> Agile --> DevOps --> DevSecOps --> SRE --> GITOps --> AIOps
+
+Security Team... ---> 
+1
+1
+1
+1
+1
+
+Exit 
+
+GIT SCM ===> Manage the source code ===> used by Developer.
+
+DevOps Team
+Infra Team
+Security Team
+Testing Team 
+Monitoring Team
+Prod Support Team 
+
+Array:
+	Static & Dynamic 
+
+ int a;
+ a = 5;
+ 
+ int b[5];			--->	 Static Array!
+ 
+ b={10,20,30,40,50}
+ 
+ Index:
+ Index start with '0'
+
+	print b[1] ==> 20 
+	
+	print b[4] ==> 50
+	
+	print b[5] ==> Out of Index Error!
+ 
+ int c[];			---> 	Dynamic Array!
+ 
+ 
+	int x = 5;
+		print x;
+	
+	int y[5] = {2,3,4,5,6}
+	
+		How print all the values ?
+		
+		print y
+
+	for(i=0;i<5;i++)
+	{
+		print i
+	}
+
+	int z[5][5];
+	
+	
+	for(i=0;i<5;i++)
+	{
+		for(j=0;j<5;j++)
+		{
+			print i,j
+		}
+	}	
+	
+	
+	3*3 
+	
+	1 2 3 
+	1 2 3
+	1 2 3
+	
+	2*2
+	
+	1 2
+	1 2
+	
+	
+	
+ 
+ 
+Name 	subj1	subj2	subj3
+
+xya  	1		2		2
+
+fgh		4		5		6
+ 
+ 
+ 
+ 
+ 
+Program :::
+
+	User Registeration
+	User Record Updation
+	User Deletion 
+ 
+
+ 
+Package!!!
+
+Components!!!
+ 
+ 
+Employees' Database!
+
+
+	Table:
+	
+	1.	Emp. Personal Details 		-- as base component to create the next 
+	2.	Emp. Project Details
+	3.  Emp. PayScale 
+	
+
+	func sum()			====>	func Definition
+	{
+		int a=5,b=5,c;
+		c = a + b
+		return c
+	}
+	
+	func sum(int a, int b)
+	{
+		c = a + b
+		return c
+	}
+	
+	func sum(int a, int b,int z)
+	{
+		c = a + b + z
+		return c
+	}
+
+	sum()	- 10				====> 	func Call 
+	
+	sum(4,4)	- 8
+	
+	sum(1,1,1) - 3
+	
+
+Next ::
+
+@@@@@@@
+DAY-3
+@@@@@@@
+
+1. Install Eclipse / Visual Studio Code IDE
+2. Create Simple Java Programs
+3. How to build and package the application
+4. Create Python Programs 
+5. Build and  Package Python Programs
+6. SQL
+
+
+Eclipse Java EE  Download :::
+
+https://www.eclipse.org/downloads/packages/release/kepler/sr2/eclipse-ide-java-ee-developers
+
+Open JDK :::
+
+https://access.redhat.com/documentation/en-us/openjdk/11/html-single/installing_and_using_openjdk_11_for_windows/index#openjdk_for_windows_installation_options
+
+
+Action Items:
+
+	-	Install eclipse and jdk 
+	-	Open command prompt enter javac command to verify the installation of jdk
+	-	SQL - Install SQLite on ur windows Machine
+	-	Create Free Tier Account on AWS
+
+
+SQL Tables :::
+
+	- 	Create Table
+	-	Insert Records
+	-	Update Records
+	-	Delete Records
+	
+	-	Retrieve Records ***
+	
+select * from emp_table;
+		
+emp_no		emp_name		emp_dept	emp_salary
+
+1001		zxc				IT			10000
+1002		zcv				FIN			19000
+1003		dfsd			HR			18000	
+1004		qwe				IT			16000	
+1005		sdf				ADMIN		10000	
+
+select * from emp_table;
+
+WHERE Clause === is used to apply conditions using the operator.
+
+select * from emp_table where emp_dept = "IT";
+
+emp_no		emp_name		emp_dept	emp_salary
+1001		zxc				IT			10000
+1004		qwe				IT			10000	
+
+select * from emp_table where emp_no = 1005;
+1005		sdf				ADMIN		10000
+
+
+select emp_no, emp_name, emp_dept from emp_table where emp_dept = "IT";
+
+emp_no		emp_name		emp_dept
+1001		zxc				IT		
+1004		qwe				IT		
+
+select emp_no, emp_name from emp_table where emp_salary > 18000;
+
+select emp_no, emp_name from emp_table where emp_salary between 10000 and 18000;
+
+
+emp_no		emp_name		emp_dept	emp_salary
+1001		zxc				IT			10000
+1002		zcv				FIN			19000
+1003		dfsd			HR			18000	
+1004		qwe				IT			16000	
+1005		sdf				ADMIN		10000	
+
+
+select emp_no, emp_name from emp_table where emp_dept = "IT" or emp_dept = "MMM";
+
+select emp_no, emp_name from emp_table where emp_dept = "IT" or emp_dept = "MMM";
+
+Aggregate functions:
+
+sum()
+avg
+max
+min
+count()
+
+
+delete from emp_table where emp_dept = "ADMIN"
+
+update emp_table set emp_dept = "RM" where emp_no = 1003;
+
+
+
+@@@@@@@@
+Day-4
+@@@@@@@@
+
+Install jdk 17
+
+https://www.oracle.com/in/java/technologies/downloads/
+
+Define Environmental variable for the jdk installation path
+
+
+got to start menu ===> type environment
+
+Environment Variables 
+
+under system variables
+
+Create New path : JAVA_HOME and enter the relative path 
+
+edit path variable and add new variable : %JAVA_HOME%\bin 
+
+
+
+Next, 
+
+How to write simple java pgm and build the same.
+
+Eclipse based IDE.
+
+
+
+Tomcat Server!!!!
+
+Servers!!!!
+
+	DEV-Server			---> to perform developments used by developers			===> Java,Python,NodeJS,Angular,.Net 
+	
+	Build-Server 		---> to build the appln. and create artifacts - used by developers
+	
+	Hosted Servers(hardware)		-- is where the appln. are deployed
+		Application Server (software)		- Apache tomcat / nginx -- is used to run your web applications!
+		
+		QA Server 
+			Application Server (software)		- Apache tomcat / nginx -- is used to run your web applications!
+		UAT Server 
+			Application Server (software)		- Apache tomcat / nginx -- is used to run your web applications!
+		PROD Server
+			Application Server (software)		- Apache tomcat / nginx -- is used to run your web applications!
+
+
+Infra-structure Team 		--> to provision the servers/infra	
+								Terraform/CF/ARM tool
+
+Configure the servers 		Installation/management of software or appln packages 	
+								Configuration Management Tool : Ansible / puppet / chef 
+
+Non-Prod Environment		 							
+DEV,QA,UAT
+
+Through DevOps automation, using Terraform like tools we need to dynamically create the test servers, configure test servers using ansible, Test the Application, once the testing is completed, Delete the test servers.
+
+all these non-prod servers shd be available only during the business hours.
+
+But, prod servers shd be up and running 24/7
+
+For Code Development :
+
+			Eclipse based IDE, jdk
+
+Build Tools:
+
+		MAVEN,GRADLE,ANT 
+
+2022-12 - https://download.eclipse.org/releases/2022-12/
+
+**************************************************************
