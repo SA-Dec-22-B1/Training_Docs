@@ -792,9 +792,9 @@ Tomcat Server!!!!
 
 Servers!!!!
 
-	DEV-Server			---> to perform developments used by developers			===> Java,Python,NodeJS,Angular,.Net 
+	DEV-Servers			---> to perform developments used by developers			===> Java,Python,NodeJS,Angular,.Net 
 	
-	Build-Server 		---> to build the appln. and create artifacts - used by developers
+	Build-Servers 		---> to build the appln. and create artifacts - used by developers
 	
 	Hosted Servers(hardware)		-- is where the appln. are deployed
 		Application Server (software)		- Apache tomcat / nginx -- is used to run your web applications!
@@ -887,3 +887,243 @@ Dynamic Provisioning!
 			
 		PROD Server				1
 			Application Server (software)		- Apache tomcat / nginx -- is used to run your web applications!
+
+
+
+@@@@@@@@@@@
+@DAY-5 & 6
+@@@@@@@@@@@
+
+
+		Fundaments Computing Environment!!!
+		
+		On-premises 
+		
+		Cloud Platform
+		
+		benefits of using Cloud 
+		
+		Services : IAAS, PAAS, SAAS
+		
+		Deployment Models : Public, Private, Hybrid, Community
+		
+		Various Cloud service providers 
+			AWS, AZ, GCP
+		
+		Created AWS Account (Free-tier)
+		AWS Console UI
+		Various Services
+		Launched EC2 Instances
+			EC2 Instance Connect!
+		
+		Use SSH Client :
+		
+			Mobaxterm (or) putty
+		
+		Connect to the external VMs'
+		
+		
+		User Name & Password
+		User Name & Keys
+		User Name & Tokens
+		Passwordless authentications!
+		
+		IAM  --> Create Users/Groups/Roles/Secret keys/ Access Keys 
+		
+		RBAC --> Role Based Access Control
+		
+		Create User		--> xyz 
+		
+		DEV Team -- 10 members --> Dev-role - (read,update) 
+		
+		Group level management!
+		
+		DEV-Users-Group 	== 10 member 
+		
+		Key-pairs
+			private/public keys 
+			
+			
+		IAM 
+			
+			Role 	--> DEV, TEST, ADMIN, 
+			Group	--> DEV, TEST, ADMIN,
+				DEV 
+					user1
+					user2
+					user3
+				TEST
+					user1
+					user2
+					user3 
+		
+		
+		C:/ DevOps 
+		
+		
+		EC2 Instance ----> Virtual Machine
+
+		AWS Architecture:
+		
+			VPC 
+			Subnet 
+			Routing
+			Internet Gateway
+			Routing tables
+			Security Group
+			EC2 Instance 
+		
+		
+		IP Address is used to access the VM 
+			Public IP			x.x.x.x 		-->  Firewall 
+			Private IP
+		
+		65.1.132.255
+		65.0.55.238
+		
+		Private : 172.31.10.186
+		
+		VPC :
+		
+			VM1 <Private_IP> VM2 
+			
+		VPC1
+			VM1	
+		
+		VPC2
+			VM1	
+		
+		EC2 Instance Connect!
+		
+		SSH - Client :
+			MobaXterm.
+		
+
+	Working on Amazon Linux VMs'
+	
+	Linux ???? 
+	
+	OS :
+	
+		Operating System !
+		
+		
+	Linux Fundamentals :::
+	
+		Operating System !
+		
+		
+		Hardware -- OS -- Software Applications
+		
+		Windows -- Registry!			--  GUI
+		
+		Linux   -- kernel				--  Distributions ---> CUI 
+												Debian
+													Ubuntu		---> GUI
+												Fedora
+													Centos
+													rhel
+													amazon linux
+		
+		Access Linux Machine :
+		
+			User Name & Password
+			User Name & Keys
+			User Name & Tokens
+			Passwordless authentications!
+			
+		Logged Into Linux :
+		
+		got the terminal ::
+		
+		-	User creation	Admin / general users
+		-	Install all the required software/applications.
+		-	Manage the software/applications
+				-	period update / upgrade
+				- 	define access 
+		-	File Management 
+				-	Create / Read / Update / Delete 
+				-	Grant access to other user in the machine
+				-	Directories / Folders
+		-	Establish communication with other Systems in the network
+				-	File Access / Transfer 
+				-	SSH 
+						UserID - pswd/key/token/pswdless auth	
+		
+		Environments 
+			DEV Environment:
+				Create the application / Coding
+				Build - compiling the src
+				create artifacts 
+			
+			Test Environment
+			
+				QA
+					Execute the artifact(application) to test the scenarios
+				UAT 
+					Execute the artifact(application) to test the scenarios
+				
+			Prod Environment
+				PROD -- LIVE Environment
+				
+			
+		Linux Machine 
+			User :
+				root user
+				
+				general user 
+		
+		Case Sensitive
+		
+		Package Manager --> it is used to install and Manage(update,remove) the software packages in Linux 
+		
+		Various Package Managers :
+		
+			Linux Distributions ::
+			
+				Debian --> apt-get
+					ubuntu 
+				Fedora --> yum
+				
+				rpm
+				wget
+				*.tar
+				
+				amazon-linux-extra
+				
+			All the package Managers are executed ONLY as a root user 
+				
+			yum install git 
+			
+			yum update git 
+			
+			Elevate the access to root level 
+		
+			> sudo yum update
+			> sudo -i 
+			
+[ec2-user@ip-172-31-10-186 ~]$ history
+    1  clear
+    2  yum install git
+    3  yum update -y
+    4  sudo yum update -y
+    5  sudo -i
+    6  clear
+    7  sudo -i
+    8  clear
+    9  git --version
+   10  clear
+   11  git --version
+   12  history
+[ec2-user@ip-172-31-10-186 ~]$ sudo -i
+[root@ip-172-31-10-186 ~]# history
+    1  yum update -y
+    2  exit
+    3  clear
+    4  exit
+    5  git --version
+    6  yum install git
+    7  git --version
+    8  history
+[root@ip-172-31-10-186 ~]# exit
+logout
