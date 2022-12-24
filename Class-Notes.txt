@@ -1127,3 +1127,239 @@ Dynamic Provisioning!
     8  history
 [root@ip-172-31-10-186 ~]# exit
 logout
+
+
+@@@@@@@@
+DAY-7 & 8
+@@@@@@@@
+
+	Agenda ::
+	
+	AWS Console
+	Linux Fundamentals 
+	
+		Linux --> Admin / Dev 
+		Linux --> DevOps 	--> Shell Scripts to perform DevOps related tasks
+	
+	DevOps 
+
+		-	User creation	Admin / general users
+		-	Install all the required software/applications.
+		-	Manage the software/applications
+				-	period update / upgrade
+				- 	define access 
+		-	File Management 
+				-	Create / Read / Update / Delete 
+				-	Grant access to other user in the machine
+				-	Directories / Folders
+		-	Establish communication with other Systems in the network
+				-	File Access / Transfer 
+				-	SSH 
+						UserID - pswd/key/token/pswdless auth		
+	
+SSH Clients::	
+	MobaXterm :
+	putty : 	
+	
+	Visual Studio Code :: -- IDE (Terminal)
+	
+	Your Roles & Responsibilities!!!!
+	
+	DEV Team 
+		DB Admins
+
+	CI/CD
+	
+	DevOps Services :
+	
+		Self-Managed Services	
+				AWS : EC2 Service, GIT,Jenkins,Ansible,Docker, Kubernetes 
+				Az :  Virtual Machines, GIT,Jenkins,Ansible,Docker, Kubernetes 
+				
+		Managed Services 
+			AWS / Azure / GCP
+			
+
+	Linux Fundamentals :
+
+		-	Install all the required software/applications.
+				Package Managers :
+				for fedoro/amazon linux 		: 	yum 				install,remove,upgrade 
+				for Debian/Ubuntu 				:	apt-get
+					Eg.: yum install git -y 
+				all package Managers shd be executed as a root user. 
+					sudo yum install git 								--> Installed. 2.81v				
+					sudo -i 					
+					yum install <pgk_name>					
+					amazon linux
+					wget 	=== Download the *.tar(*.zip) files 
+					rpm					
+				
+		-	User creation	Admin / general users
+		
+		-	Manage the software/applications
+				-	period update / upgrade
+				- 	define access 
+		-	File Management 
+				-	Create / Read / Update / Delete 
+				-	Grant access to other user in the machine
+				-	Directories / Folders
+		-	Establish communication with other Systems in the network
+				-	File Access / Transfer 
+				-	SSH 
+						UserID - pswd/key/token/pswdless auth	
+	
+		
+		
+		
+		Linux is an Open Source OS
+
+			Release a New Distributions
+		
+		Fedora : 
+			RHEL
+			Centos
+			Amazon Linux 
+		Debian:
+			Ubuntu 
+		
+
+
+	Create Files and Folders(dir) in Linux
+
+		mkdir dir1
+		cd dir1
+		
+		echo "rec1" 
+		vi 
+	Handling Files :::
+		
+		vi <file1.txt>
+		press 'i' on your keyboard  to go to INSERT MODE 
+		press 'esc' 
+		type  :wq		Save & Quit the file 
+		
+		press 'esc'
+		type  :q!		Quit the file without Save!		
+	
+		
+Linux Fundamental Commands:
+
+	clear 
+	pwd --> 
+	ls
+	mkdir
+	cd
+	cd ..
+	
+	
+Scripts ----> background Mode / Foreground Mode 
+	
+	
+	Users Management in Linux :::
+	
+		useradd user1  ---> UserName or AccountName
+		home dir for the user.
+		/home/user1 
+		
+		password based authentication		
+		passwordless authentication
+		key based authentication
+		
+		Service Account --- DEV Team -- 10 Members - 3 members are considered as TL. Service ID 
+		
+		Developers allowed to create the project. *.java
+		
+		deploy the project    ---> 
+		
+		Group(s)
+		
+		devteam_group --> read/write/delete
+		add these 10 members to this group.
+		
+		IAM --> RBAC
+		
+		file1.txt
+		
+		----------   	file1.txt
+		d---------		dir2
+		
+		-rwxrwxrwx		demo.sh
+		
+		-		file type		
+		---		type of access at the user level
+		---		type of access at the group level		
+		---		type of access outside the group 
+		
+		
+		Dev Server 		
+		
+		Build Server  -- create artifacts sample.war
+		
+		Hosted Server -- Deploy -- Copy artifacts from build server into hosted servers 
+		
+
+	Create User :
+		useradd -d /home/ansibleadmin -m ansibleadmin
+		### create password for this user.
+		passwd ansibleadmin
+		
+		su - ansibleadmin
+		
+		cat /etc/passwd 		=== get the list of users 
+		
+	How to create the ssh keys 
+		
+		
+		
+useradd -m -d /home/devopsadmin devopsadmin
+
+passwd devopsadmin
+
+su - devopsadmin
+
+ssh-keygen
+
+ls ~/.ssh 
+
+#You should see following two files:
+
+#id_rsa - private key
+#id_rsa.pub - public
+
+cd /home/devopsadmin/.ssh
+
+cat id_rsa.pub > authorized_keys
+
+chown -R devopsadmin /home/devopsadmin/.ssh
+chmod 600 /home/devopsadmin/.ssh/authorized_keys
+chmod 700 /home/devopsadmin/.ssh
+
+#make devopsadmin user as a owner to tomcat dir :
+
+chown -R devopsadmin /opt/tomcat
+
+/home/devopsadmin		
+		
+		
+		From Jenkins Master --- connect to QA-Server (IP_Addr),username: devopsadmin1 , private_key
+		
+		
+		Infra TEam :::
+		
+		Admin 
+		
+			install git in all the developers machine 100 Developers 
+		
+			yum install git 
+		
+		As an Admin , I use Ansible Tool to perform this task 
+		
+		Install Ansible in one Machine(Controller Machine)
+				Connect to all the 100 Machines 
+		
+		
+		
+		1 : 100 
+		
+		SSH Connection (ID_Addr,UserID,Keys(Private/Public)
