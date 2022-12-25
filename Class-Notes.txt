@@ -49,6 +49,7 @@ Environments:
 Module 1 : Application Development Fundamentals
 
 	DevOps is a process automatic the end-to-end CI-CD.
+	DevOps is a Software Development Strategy which helps to promote the colaboration between the teams like (DEV,Operations) to achieve CI, CD in more automated fashion.
 	
 	Continuous Development
 	Continuous Integration
@@ -110,14 +111,15 @@ Calculator program:
 func : + - / *
 
 amazon.com ::
+Project :
 
 	1. User Registeration - Sign-up
-	2. Sign-in
+	2. Sign-in							---> User-Interface  textboxes, button controls, validations :: UserName : email_ID --> 2adfas@gmail.com
 	3. Search 
 	4. Add to cart
 	5. place order
 		delivery addr
-	6. payment						-- payment --> code changes -- build -- create artifacts -- deliver for further testing -- deploy to prod
+	6. payment							---> payment --> code changes -- build -- create artifacts -- deliver for further testing -- deploy to prod
 	7. track
 	
 
@@ -137,6 +139,13 @@ How to do achieve Micro-service based Applications
 		code(*.java/*.jsp) - build(Compile & create artifacts of the source code) - created artifacts(*.war) - deploy(QA/UAT/Pre-Prod/PROD)  ---> Linux servers
 		
 
+	Continuous Delivery   		(vs)		Continuous Deployment
+	
+	Need Manual Approval for 				Without Manual Approval We can perform PROD deployments
+	PROD Deployments 
+	
+	
+	
 About the Type of Applications:
 
 	Desktop Application
@@ -1467,9 +1476,9 @@ ansible
 				
 				key sequential file 
 				
-				1 asadf sadf
-				2 adf   asdf
-				3 adf   adf 
+				1 asadf 	sadf
+				2 adf   	asdf
+				3 adf   	adf 
 
 	
 
@@ -1506,7 +1515,7 @@ sudo yum install vim -y
 
 *********************************************************
 
-#!/bin/bash
+# !/bin/bash
 num=150
 if [ $num -gt 100 ] && [ $num -lt 200 ]
 then
@@ -1568,6 +1577,46 @@ then
 else
   echo " Your total marks: sum=$(( quiz_marks + assignments_marks))"
 fi
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+
+
+
+
+
+
 
 
 
@@ -1795,55 +1844,65 @@ echo "$r"
 
 
 
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+*********************************************************************
+DevOps Introduction ::::
+*********************************************************************
 
 	
+	DevOps Services :::
 	
+		AWS ?
+			EC2 Instances 					- VM's -- DEV,TEST,PROD
+			IAM								
+			RDS								
+			Loadbalancer					- 
+			ECR								- Elastic Container Registry 
+			EKS								- Elastic Kubernetes Service managed service for container orchestration!
+			CloudFront						- 
+			AutoScaling
+			AWS S3(Simple Storage Service)
 	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		AWS Managed Dev Services:
+			Code Commit					-- github
+			Code Pipeline				-- jenkins
+				
+	Deploy Application!
+	
+		*.war   -- Package 
+			
+		converted as an Application docker Image and exec as a Docker container!
+		Docker 
+		
+	DEV 
+		Created Src Code :index.jsp
+		Build --> Compile and create artifacts(index.war) 			ubuntu, jdk1.8
+		package this artifacts with all its dependencies and create docker image. image(index.war,ubuntu,jdk1.8)
+		
+		Container Registry!
+		
+			AWS :: ECR - paid services 
+			
+			DockerHub --> used to manage the docker images
+		
+		
+		Deploy to target environment 
+		
+	QA 		ubuntu, jdk1.6	index.war		convert that docker image to docker container and execute.
+	UAT 					index.war		convert that docker image to docker container and execute.
+	PROD  					index.war		convert that docker image to docker container and execute.
+	
+	Container ORchestrators!
+	
+		Docker Swarm 	self-managed 
+		Kubernetes!		self-managed	
+		
+		
+		
+·	 Evolution of Waterfall, Agile and DevOps
+·        What is DevOps
+·        Why DevOps
+·        Benefits of DevOps
+·        DevOps Stages
+·        DevOps Lifecycle
+·        Various Automation in DevOps
+·        Overview of CICD
