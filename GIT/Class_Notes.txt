@@ -1,0 +1,2784 @@
+https://mail.google.com/mail/u/0/#inbox/FMfcgzGrbRcGqxFzVxjQjMnRQTqSsGjr
+
+1. Timings --> 11 - 3pm s/s 
+
+2. 1pm - brk.
+
+3. 
+
+**********
+DAY-1
+**********
+
+DevOps :
+
+	Roles :
+		Scripting Lang.
+			yaml scripts
+			python scripts 
+			groovy Scripts
+			shell Scripts
+			
+		Build and Deployment Process  
+		Teams involved in the process
+		Tools involved in the process 
+		
+
+DevOps Engg. --> Day-to-Days activities!!!!
+
+
+	DEV Team ===> Java programming Lang. - coding is done -- ? Test -- ? Deployment -- ? 
+		
+		
+		code - build - create artifacts - deploy(QA/UAT/Pre-Prod/PROD)  ---> Linux servers
+		
+
+Environments:
+		
+	Non-Prod						Production
+	(QA/UAT/Pre-Prod)				(PROD)
+	
+
+	TESTING TEAM -->
+	
+	DevOps
+	
+	
+	QA server --> Install JDK, nginx/tomcat 
+	
+	1000's 
+
+Module 1 : Application Development Fundamentals
+
+	DevOps is a process automatic the end-to-end CI-CD.
+	DevOps is a Software Development Strategy which helps to promote the colaboration between the teams like (DEV,Operations) to achieve CI, CD in more automated fashion.
+	
+	Continuous Development
+	Continuous Integration
+	Continuous Delivery
+	Continuous Testing
+	Continuous Deployment
+	Continuous Monitoring
+	
+SDLC :
+
+	Software Development Life Cycle:
+	
+		1. Requirement Analysis
+		2. Design
+		3. Implement - Coding / Development 
+		4. Testing 
+		5. Deployment 
+		6. Monitoring
+	
+	
+	Waterfall Model: --- Implemented in a Linear Fashion.
+			
+		1. Requirement Analysis
+		2. Design
+		3. Implement - Coding / Development 
+		4. Testing 
+		5. Deployment 
+		6. Monitoring
+	
+	We can't achieve: Continuous Development, Continuous Delivery / Continuous Deployment 
+	
+	Agile Methodologies:
+	
+		1. Requirement Analysis
+		2. Design
+		3. Implement - Coding / Development 
+		4. Testing 
+		5. Deployment 
+		6. Monitoring
+	
+	We can achieve : Continuous Development, Continuous Delivery. But not Continuous Deployment 
+	
+Web Application :
+
+		Process involved --> Sign-up, Sign-in, inbox, compose  --- all these process are considerd as one whole application
+		
+	DevOps : 
+		
+	We can achieve : Continuous Development, Continuous Delivery as well as Continuous Deployment 	
+	
+
+In general, :: 	Monolith Application 
+					Process involved --> Sign-up, Sign-in, inbox, compose  --- all these process are considerd as one whole application
+				
+				Microservice based architecture
+					Process involved --> Sign-up, Sign-in, inbox, compose  --- all these process are considerd as individual Micro-service
+
+Calculator program:
+func : + - / *
+
+amazon.com ::
+Project :
+
+	1. User Registeration - Sign-up
+	2. Sign-in							---> User-Interface  textboxes, button controls, validations :: UserName : email_ID --> 2adfas@gmail.com
+	3. Search 
+	4. Add to cart
+	5. place order
+		delivery addr
+	6. payment							---> payment --> code changes -- build -- create artifacts -- deliver for further testing -- deploy to prod
+	7. track
+	
+
+
+
+How to do achieve Micro-service based Applications
+
+	JAVA 
+
+
+	DEV Team ===> Java programming Lang. - coding is done -- ? Test -- ? Deployment -- ? 
+		
+	Continuous Development	
+		code(*.java/*.jsp) - build(Compile the source code) - create artifacts(*.war) - deploy(QA/UAT/Pre-Prod/PROD)  ---> Linux servers
+		
+	Continuous Integration & Continuous Delivery  - script!!!
+		code(*.java/*.jsp) - build(Compile & create artifacts of the source code) - created artifacts(*.war) - deploy(QA/UAT/Pre-Prod/PROD)  ---> Linux servers
+		
+
+	Continuous Delivery   		(vs)		Continuous Deployment
+	
+	Need Manual Approval for 				Without Manual Approval We can perform PROD deployments
+	PROD Deployments 
+	
+	
+	
+About the Type of Applications:
+
+	Desktop Application
+	Web-Based Applications
+	Web-Services
+	Mobile Applications 
+	
+
+Multi-Tier Applications
+
+	Front-end - User Interface
+	Application - Business Logic 
+	Back-end - Database
+	
+	Website :::
+	
+	amazon.com --> sign-up service 
+	
+Monolith (vs) Micro-service
+
+1 Database is used in Monolith
+
+
+
+Database ??? 
+
+Data ? --> raw text/content  ===> INDIA 
+
+Information ?			INDIA is a Country 
+
+
+Sign-Up ::
+
+
+
+Registration Form :
+
+	NAME: ZZZZZ
+	DOB: SADFSD
+	
+	Keys & Values ==> Key/value pairs
+	
+	variable 
+	int i = 5;
+
+File system:
+
+*.txt
+
+
+Relational File System
+
+*.xlx
+
+
+
+Relational Database Management system:
+
+	Rows & Columns 
+	
+	Query Language!
+		Structured Database 		-	SQL
+		Un-Structured Database		-	No-SQL 
+	
+
+Tags:
+	XML
+
+Key/value pairs 
+	JSON File
+	YAML Files
+
+Scripting Lang.
+
+Yaml scripts
+JSON --> JQs
+
+
+Transactions 
+
+	Light-weight Dbases 
+		MariaDB
+		MongoDB
+		PostgresSQL
+		SQLite
+	
+	JSON
+		JQL
+		
+	ORACLE/MYSQL
+
+DEV - Team -- Onboard any appln to devops ci/cd pipeline 
+
+	- 	Type of application
+	-	Build Application
+	- 	Create Artifacts
+	-	Which database?
+	-	How to config that database 
+
+DEV Environment:
+		
+Test Environment -- QA/UAT
+
+CI/CD Orchestration :
+	Jenkins pipelines 	--> Groovy Scripts 
+	Azure pipelines		--> yaml
+	Kubernetes			--> yaml
+	Ansible				--> yaml 
+	
+DevOps Tool :: 
+
+	Open-Source DevOps Tools		: GIT, Jenkins, Docker, Ansible, Kubernetes, Terraform, Promethus, Grafana
+	
+	Managed Services DevOps tools 	:
+		AWS			
+		Azure
+		GCP 
+
+Java Programming Language :
+
+	Open 
+
+How to build and create artifacts!!!!
+
+Continuous Development ???
+
+	Using the IDE - Integrated Development Environment 
+		Eg.: 	Visual Studio Code
+				Any Eclipe based IDE
+				PyCharm 
+				Intellij
+				Eclipe IDE
+				
+	For DevOps - Visual Studio Code.
+	
+Install Visual Studio Code :::
+https://code.visualstudio.com/download
+
+Helloworld.java 	==>		Compile 	==> 	binaries(executable 0/1) 	==>	 JVM
+
+Windows 
+
+run the same java artifacts in Linux ??
+
+Compile once & Run anywhere....
+
+DEV 
+
+TEST Environment (qa,uat)
+
+
+@@@@@@@@
+DAY-2
+@@@@@@@@
+
+
+
+Fundamentals of Programming !!!  Java.
+
+Continuous Development:::
+
+IDE --> Eclipe based IDEs for Development.
+
+Eclipe
+
+	Code
+	Build
+	Test
+	Create Artifacts
+	
+
+Programming!!!
+
+Building Blocks for Programming!
+
+SDLC 
+
+	Req. Analysis
+
+	Plan
+
+	Design
+
+	Code -- Programming Lang.
+
+	Deploy 
+	
+	Monitor 
+
+Python,
+yaml
+groovy
+shell
+
+
+Clients -- Onboard appln to devops 
+
+Assessment.
+
+	Embedded Application -- C programming
+	
+	java, python, nodejs, angular 
+	
+Algorithm!!!
+
+Psudo Code!!!
+
+Source Code / Program 
+
+Creating a Home-page for feedback form ::::
+
+Task: 
+
+	1. To find sum of two number!
+	
+		 5 + 5 = ?
+		 
+		 int a, b, c;
+		 
+		 int a = 5
+		 
+		 a = 5
+		 
+		 a = "xyz"
+		 
+		 c = a + b 
+		 print c
+		 
+		 5 + 5
+		 c = 10
+		 
+		 30 + 30 
+		 c = 60 
+		 
+		 55.5 + 80.5 		 
+		 5646456456456456 + 2342342342342342
+
+DevOps !!!!
+
+Scripts to automate CI/CD 
+
+		Templates!!!!
+		Variables!!!
+
+C Programming!
+pointers, arrays, func, 
+
+Java - String, multithreading, class, main
+
+Data.
+		constant/variable
+		Identifers
+		Memory
+		DataType 
+		Arrays -- Handle group of values of same type
+		loop
+		file Handling
+		Database 
+		Networking - Communate to other systems / servers
+		
+Syntax!!!
+
+Java Application:
+	
+Build Tools : MAVEN , GRADLE , ANT
+
+Writing a Java Program:
+
+	2. Find maximum of 10 Numbers!
+	
+		1,................,10
+	
+	3. Find maximum of n Numbers!
+	
+		1,.........................,,,,,,,	
+
+	4. Display #
+	
+	5. Display # # # #
+	
+	6. Display:
+	
+			#
+			# # 
+			# # #
+			# # # #
+			# # # # #
+			# # # # # #
+			# # # # # # #
+			# # # # # # # #	
+	
+	
+	7. Display:
+
+	
+	
+			# # # # # #
+			  # # # #
+			    # #
+				 #
+	
+	
+Program Managements
+
+
+	Java Web Appln.:
+	
+		DataBase :
+		SQL Query to fetch the record from Database 
+		username / password 
+		
+	CI/CD
+	
+		Continuous Integration --- Maven Build/Create artifacts ---> Deploying to QA ---> Deploying to UAT 
+		
+		
+		int a = 12312;
+		string x = "password";
+		
+		Sonarqube Analyzer -- used to ensure Code Quality!
+		Vulnerabilities
+		Coding Standards
+		
+		S/D 
+
+		DevOps ---->> CI / C-Delivery ====> C-Deployment 
+		
+		Dependencies & Security theads!!! --> Dev-Sec-Ops
+		
+		Source Code is stored in Source Code Repository - SCM / VCS - GIT 
+
+	Build vs Artifacts ???
+	
+	
+	sample.java  		-->  	Compile the program  	--> 	create sample.class  
+	
+	Web Application - Springboot 
+	
+	samplewebapp.java  	-->  	Compile the program  	--> 	create samplewebapp.war  
+		
+	Build is a process of compiling the source code and creating artifacts(binaries - *.war/*.jar/*.exe/*.class)
+	Build Tools : MAVEN , GRADLE , ANT
+	
+	Jenkins ---> Build Orchestration Tool - used to create CI/CD pipeline
+	
+	
+	adf
+	asdf
+	asdf
+	
+	
+	Maximum of 2 Numbers
+	Maximum of 3 Numbers
+	Maximum of 4 Numbers
+	Maximum of 200 Numbers	
+	
+	
+Dynamic Files to be create based on the API call issued.
+	json / yaml...
+
+API Call :: to deploy a service in pre-prod.
+
+PROD ;;; 
+
+Continuos Delivery --> PROD 
+
+Non-Prod							PROD 
+QA UAT 		<Approval Stage>		PROD 
+
+Release Management Team 
+Security Audit Team
+
+DevOps		===>  	DevSecOps
+
+Waterfall --> Agile --> DevOps --> DevSecOps --> SRE --> GITOps --> AIOps
+
+Security Team... ---> 
+1
+1
+1
+1
+1
+
+Exit 
+
+GIT SCM ===> Manage the source code ===> used by Developer.
+
+DevOps Team
+Infra Team
+Security Team
+Testing Team 
+Monitoring Team
+Prod Support Team 
+
+Array:
+	Static & Dynamic 
+
+ int a;
+ a = 5;
+ 
+ int b[5];			--->	 Static Array!
+ 
+ b={10,20,30,40,50}
+ 
+ Index:
+ Index start with '0'
+
+	print b[1] ==> 20 
+	
+	print b[4] ==> 50
+	
+	print b[5] ==> Out of Index Error!
+ 
+ int c[];			---> 	Dynamic Array!
+ 
+ 
+	int x = 5;
+		print x;
+	
+	int y[5] = {2,3,4,5,6}
+	
+		How print all the values ?
+		
+		print y
+
+	for(i=0;i<5;i++)
+	{
+		print i
+	}
+
+	int z[5][5];
+	
+	
+	for(i=0;i<5;i++)
+	{
+		for(j=0;j<5;j++)
+		{
+			print i,j
+		}
+	}	
+	
+	
+	3*3 
+	
+	1 2 3 
+	1 2 3
+	1 2 3
+	
+	2*2
+	
+	1 2
+	1 2
+	
+	
+	
+ 
+ 
+Name 	subj1	subj2	subj3
+
+xya  	1		2		2
+
+fgh		4		5		6
+ 
+ 
+ 
+ 
+ 
+Program :::
+
+	User Registeration
+	User Record Updation
+	User Deletion 
+ 
+
+ 
+Package!!!
+
+Components!!!
+ 
+ 
+Employees' Database!
+
+
+	Table:
+	
+	1.	Emp. Personal Details 		-- as base component to create the next 
+	2.	Emp. Project Details
+	3.  Emp. PayScale 
+	
+
+	func sum()			====>	func Definition
+	{
+		int a=5,b=5,c;
+		c = a + b
+		return c
+	}
+	
+	func sum(int a, int b)
+	{
+		c = a + b
+		return c
+	}
+	
+	func sum(int a, int b,int z)
+	{
+		c = a + b + z
+		return c
+	}
+
+	sum()	- 10				====> 	func Call 
+	
+	sum(4,4)	- 8
+	
+	sum(1,1,1) - 3
+	
+
+Next ::
+
+@@@@@@@
+DAY-3
+@@@@@@@
+
+1. Install Eclipse / Visual Studio Code IDE
+2. Create Simple Java Programs
+3. How to build and package the application
+4. Create Python Programs 
+5. Build and  Package Python Programs
+6. SQL
+
+
+Eclipse Java EE  Download :::
+
+https://www.eclipse.org/downloads/packages/release/kepler/sr2/eclipse-ide-java-ee-developers
+
+Open JDK :::
+
+https://access.redhat.com/documentation/en-us/openjdk/11/html-single/installing_and_using_openjdk_11_for_windows/index#openjdk_for_windows_installation_options
+
+
+Action Items:
+
+	-	Install eclipse and jdk 
+	-	Open command prompt enter javac command to verify the installation of jdk
+	-	SQL - Install SQLite on ur windows Machine
+	-	Create Free Tier Account on AWS
+
+
+SQL Tables :::
+
+	- 	Create Table
+	-	Insert Records
+	-	Update Records
+	-	Delete Records
+	
+	-	Retrieve Records ***
+	
+select * from emp_table;
+		
+emp_no		emp_name		emp_dept	emp_salary
+
+1001		zxc				IT			10000
+1002		zcv				FIN			19000
+1003		dfsd			HR			18000	
+1004		qwe				IT			16000	
+1005		sdf				ADMIN		10000	
+
+select * from emp_table;
+
+WHERE Clause === is used to apply conditions using the operator.
+
+select * from emp_table where emp_dept = "IT";
+
+emp_no		emp_name		emp_dept	emp_salary
+1001		zxc				IT			10000
+1004		qwe				IT			10000	
+
+select * from emp_table where emp_no = 1005;
+1005		sdf				ADMIN		10000
+
+
+select emp_no, emp_name, emp_dept from emp_table where emp_dept = "IT";
+
+emp_no		emp_name		emp_dept
+1001		zxc				IT		
+1004		qwe				IT		
+
+select emp_no, emp_name from emp_table where emp_salary > 18000;
+
+select emp_no, emp_name from emp_table where emp_salary between 10000 and 18000;
+
+
+emp_no		emp_name		emp_dept	emp_salary
+1001		zxc				IT			10000
+1002		zcv				FIN			19000
+1003		dfsd			HR			18000	
+1004		qwe				IT			16000	
+1005		sdf				ADMIN		10000	
+
+
+select emp_no, emp_name from emp_table where emp_dept = "IT" or emp_dept = "MMM";
+
+select emp_no, emp_name from emp_table where emp_dept = "IT" or emp_dept = "MMM";
+
+Aggregate functions:
+
+sum()
+avg
+max
+min
+count()
+
+
+delete from emp_table where emp_dept = "ADMIN"
+
+update emp_table set emp_dept = "RM" where emp_no = 1003;
+
+
+
+@@@@@@@@
+Day-4
+@@@@@@@@
+
+Install jdk 17
+
+https://www.oracle.com/in/java/technologies/downloads/
+
+Define Environmental variable for the jdk installation path
+
+
+got to start menu ===> type environment
+
+Environment Variables 
+
+under system variables
+
+Create New path : JAVA_HOME and enter the relative path 
+
+edit path variable and add new variable : %JAVA_HOME%\bin 
+
+
+
+Next, 
+
+How to write simple java pgm and build the same.
+
+Eclipse based IDE.
+
+
+
+Tomcat Server!!!!
+
+Servers!!!!
+
+	DEV-Servers			---> to perform developments used by developers			===> Java,Python,NodeJS,Angular,.Net 
+	
+	Build-Servers 		---> to build the appln. and create artifacts - used by developers
+	
+	Hosted Servers(hardware)		-- is where the appln. are deployed
+		Application Server (software)		- Apache tomcat / nginx -- is used to run your web applications!
+		
+		QA Server 
+			Application Server (software)		- Apache tomcat / nginx -- is used to run your web applications!
+		UAT Server 
+			Application Server (software)		- Apache tomcat / nginx -- is used to run your web applications!
+		PROD Server
+			Application Server (software)		- Apache tomcat / nginx -- is used to run your web applications!
+
+
+Infra-structure Team 		--> to provision the servers/infra	
+								Terraform/CF/ARM tool
+
+Configure the servers 		Installation/management of software or appln packages 	
+								Configuration Management Tool : Ansible / puppet / chef 
+
+Non-Prod Environment		 							
+DEV,QA,UAT
+
+Through DevOps automation, using Terraform like tools we need to dynamically create the test servers, configure test servers using ansible, Test the Application, once the testing is completed, Delete the test servers.
+
+all these non-prod servers shd be available only during the business hours.
+
+But, prod servers shd be up and running 24/7
+
+For Code Development :
+
+			Eclipse based IDE, jdk
+
+Build Tools:
+
+		MAVEN,GRADLE,ANT 
+
+2022-12 - https://download.eclipse.org/releases/2022-12/
+
+**************************************************************
+
+AWS Account Creation!
+
+	Understand the AWS Console / user interface!
+	Access list of services
+
+
+On-premises				
+PROD Server
+	Application Server1 (software)		- Apache tomcat / nginx -- is used to run your web applications! 50 users 
+	Application Server2 (software)		- Apache tomcat / nginx -- is used to run your web applications!  
+	Application Server3 (software)		- Apache tomcat / nginx -- is used to run your web applications!  
+	Application Server4 (software)		- Apache tomcat / nginx -- is used to run your web applications!  
+
+
+
+
+Cloud Platform
+
+
+Create the required compute devices in cloud - Virtual Machines! Window/Linux/Mac
+
+Cloud service Providers:
+	AWS, Azure, GCP, Digital Ocean, IBM Cloud 
+
+Provide free-tier account to start and explore.
+
+	Based on usage the cloud services will charged / billed.
+	Availability			1
+	Security 
+	Reliability
+	Load-balancing
+	Auto-Scaling			
+		Scale-up			1
+		Scale-down			
+	
+PROD Server
+	Application Server (software)		- Apache tomcat / nginx -- is used to run your web applications! 10000 users 
+
+Dynamic Provisioning!
+
+
+	Hosted Servers(hardware)		-- is where the appln. are deployed
+		Application Server (software)		- Apache tomcat / nginx -- is used to run your web applications!
+		
+		QA Server				10
+			Application Server (software)		- Apache tomcat / nginx -- is used to run your web applications!
+		UAT Server 				0	
+			Application Server (software)		- Apache tomcat / nginx -- is used to run your web applications!
+			
+			
+			
+		PROD Server				1
+			Application Server (software)		- Apache tomcat / nginx -- is used to run your web applications!
+
+
+
+@@@@@@@@@@@
+@DAY-5 & 6
+@@@@@@@@@@@
+
+
+		Fundaments Computing Environment!!!
+		
+		On-premises 
+		
+		Cloud Platform
+		
+		benefits of using Cloud 
+		
+		Services : IAAS, PAAS, SAAS
+		
+		Deployment Models : Public, Private, Hybrid, Community
+		
+		Various Cloud service providers 
+			AWS, AZ, GCP
+		
+		Created AWS Account (Free-tier)
+		AWS Console UI
+		Various Services
+		Launched EC2 Instances
+			EC2 Instance Connect!
+		
+		Use SSH Client :
+		
+			Mobaxterm (or) putty
+		
+		Connect to the external VMs'
+		
+		
+		User Name & Password
+		User Name & Keys
+		User Name & Tokens
+		Passwordless authentications!
+		
+		IAM  --> Create Users/Groups/Roles/Secret keys/ Access Keys 
+		
+		RBAC --> Role Based Access Control
+		
+		Create User		--> xyz 
+		
+		DEV Team -- 10 members --> Dev-role - (read,update) 
+		
+		Group level management!
+		
+		DEV-Users-Group 	== 10 member 
+		
+		Key-pairs
+			private/public keys 
+			
+			
+		IAM 
+			
+			Role 	--> DEV, TEST, ADMIN, 
+			Group	--> DEV, TEST, ADMIN,
+				DEV 
+					user1
+					user2
+					user3
+				TEST
+					user1
+					user2
+					user3 
+		
+		
+		C:/ DevOps 
+		
+		
+		EC2 Instance ----> Virtual Machine
+
+		AWS Architecture:
+		
+			VPC 
+			Subnet 
+			Routing
+			Internet Gateway
+			Routing tables
+			Security Group
+			EC2 Instance 
+		
+		
+		IP Address is used to access the VM 
+			Public IP			x.x.x.x 		-->  Firewall 
+			Private IP
+		
+		65.1.132.255
+		65.0.55.238
+		
+		Private : 172.31.10.186
+		
+		VPC :
+		
+			VM1 <Private_IP> VM2 
+			
+		VPC1
+			VM1	
+		
+		VPC2
+			VM1	
+		
+		EC2 Instance Connect!
+		
+		SSH - Client :
+			MobaXterm.
+		
+
+	Working on Amazon Linux VMs'
+	
+	Linux ???? 
+	
+	OS :
+	
+		Operating System !
+		
+		
+	Linux Fundamentals :::
+	
+		Operating System !
+		
+		
+		Hardware -- OS -- Software Applications
+		
+		Windows -- Registry!			--  GUI
+		
+		Linux   -- kernel				--  Distributions ---> CUI 
+												Debian
+													Ubuntu		---> GUI
+												Fedora
+													Centos
+													rhel
+													amazon linux
+		
+		Access Linux Machine :
+		
+			User Name & Password
+			User Name & Keys
+			User Name & Tokens
+			Passwordless authentications!
+			
+		Logged Into Linux :
+		
+		goto the terminal ::
+		
+		-	User creation	Admin / general users
+		-	Install all the required software/applications.
+		-	Manage the software/applications
+				-	period update / upgrade
+				- 	define access 
+		-	File Management 
+				-	Create / Read / Update / Delete 
+				-	Grant access to other user in the machine
+				-	Directories / Folders
+		-	Establish communication with other Systems in the network
+				-	File Access / Transfer 
+				-	SSH 
+						UserID - pswd/key/token/pswdless auth	
+		
+		Environments 
+			DEV Environment:
+				Create the application / Coding
+				Build - compiling the src
+				create artifacts 
+			
+			Test Environment
+			
+				QA
+					Execute the artifact(application) to test the scenarios
+				UAT 
+					Execute the artifact(application) to test the scenarios
+				
+			Prod Environment
+				PROD -- LIVE Environment
+				
+			
+		Linux Machine 
+			User :
+				root user
+				
+				general user 
+		
+		Case Sensitive
+		
+		Package Manager --> it is used to install and Manage(update,remove) the software packages in Linux 
+		
+		Various Package Managers :
+		
+			Linux Distributions ::
+			
+				Debian --> apt-get
+					ubuntu 
+				Fedora --> yum
+				
+				rpm
+				wget
+				*.tar
+				
+				amazon-linux-extra
+				
+			All the package Managers are executed ONLY as a root user 
+				
+			yum install git 
+			
+			yum update git 
+			
+			Elevate the access to root level 
+		
+			> sudo yum update
+			> sudo -i 
+			
+[ec2-user@ip-172-31-10-186 ~]$ history
+    1  clear
+    2  yum install git
+    3  yum update -y
+    4  sudo yum update -y
+    5  sudo -i
+    6  clear
+    7  sudo -i
+    8  clear
+    9  git --version
+   10  clear
+   11  git --version
+   12  history
+[ec2-user@ip-172-31-10-186 ~]$ sudo -i
+[root@ip-172-31-10-186 ~]# history
+    1  yum update -y
+    2  exit
+    3  clear
+    4  exit
+    5  git --version
+    6  yum install git
+    7  git --version
+    8  history
+[root@ip-172-31-10-186 ~]# exit
+logout
+		
+
+@@@@@@@@
+DAY-7 & 8
+@@@@@@@@
+
+	Agenda ::
+	
+	AWS Console
+	Linux Fundamentals 
+	
+		Linux --> Admin / Dev 
+		Linux --> DevOps 	--> Shell Scripts to perform DevOps related tasks
+	
+	DevOps 
+
+		-	User creation	Admin / general users
+		-	Install all the required software/applications.
+		-	Manage the software/applications
+				-	period update / upgrade
+				- 	define access 
+		-	File Management 
+				-	Create / Read / Update / Delete 
+				-	Grant access to other user in the machine
+				-	Directories / Folders
+		-	Establish communication with other Systems in the network
+				-	File Access / Transfer 
+				-	SSH 
+						UserID - pswd/key/token/pswdless auth		
+	
+SSH Clients::	
+	MobaXterm :
+	putty : 	
+	
+	Visual Studio Code :: -- IDE (Terminal)
+	
+	Your Roles & Responsibilities!!!!
+	
+	DEV Team 
+		DB Admins
+
+	CI/CD
+	
+	DevOps Services :
+	
+		Self-Managed Services	
+				AWS : EC2 Service, GIT,Jenkins,Ansible,Docker, Kubernetes 
+				Az :  Virtual Machines, GIT,Jenkins,Ansible,Docker, Kubernetes 
+				
+		Managed Services 
+			AWS / Azure / GCP
+			
+
+	Linux Fundamentals :
+
+		-	Install all the required software/applications.
+				Package Managers :
+				for fedoro/amazon linux 		: 	yum 				install,remove,upgrade 
+				for Debian/Ubuntu 				:	apt-get
+					Eg.: yum install git -y 
+				all package Managers shd be executed as a root user. 
+					sudo yum install git 								--> Installed. 2.81v				
+					sudo -i 					
+					yum install <pgk_name>					
+					amazon linux
+					wget 	=== Download the *.tar(*.zip) files 
+					rpm					
+				
+		-	User creation	Admin / general users
+		
+		-	Manage the software/applications
+				-	period update / upgrade
+				- 	define access 
+		-	File Management 
+				-	Create / Read / Update / Delete 
+				-	Grant access to other user in the machine
+				-	Directories / Folders
+		-	Establish communication with other Systems in the network
+				-	File Access / Transfer 
+				-	SSH 
+						UserID - pswd/key/token/pswdless auth	
+	
+		
+		
+		
+		Linux is an Open Source OS
+
+			Release a New Distributions
+		
+		Fedora : 
+			RHEL
+			Centos
+			Amazon Linux 
+		Debian:
+			Ubuntu 
+		
+
+
+	Create Files and Folders(dir) in Linux
+
+		mkdir dir1
+		cd dir1
+		
+		echo "rec1" 
+		vi 
+	Handling Files :::
+		
+		vi <file1.txt>
+		press 'i' on your keyboard  to go to INSERT MODE 
+		press 'esc' 
+		type  :wq		Save & Quit the file 
+		
+		press 'esc'
+		type  :q!		Quit the file without Save!		
+	
+		
+Linux Fundamental Commands:
+
+	clear 
+	pwd --> 
+	ls
+	mkdir
+	cd
+	cd ..
+	
+	
+Scripts ----> background Mode / Foreground Mode 
+	
+	
+	Users Management in Linux :::
+	
+		useradd user1  ---> UserName or AccountName
+		home dir for the user.
+		/home/user1 
+		
+		password based authentication		
+		passwordless authentication
+		key based authentication
+		
+		Service Account --- DEV Team -- 10 Members - 3 members are considered as TL. Service ID 
+		
+		Developers allowed to create the project. *.java
+		
+		deploy the project    ---> 
+		
+		Group(s)
+		
+		devteam_group --> read/write/delete
+		add these 10 members to this group.
+		
+		IAM --> RBAC
+		
+		file1.txt
+		
+		----------   	file1.txt
+		d---------		dir2
+		
+		-rwxrwxrwx		demo.sh
+		
+		-		file type		
+		---		type of access at the user level
+		---		type of access at the group level		
+		---		type of access outside the group 
+		
+		
+		Dev Server 		
+		
+		Build Server  -- create artifacts sample.war
+		
+		Hosted Server -- Deploy -- Copy artifacts from build server into hosted servers 
+		
+
+	Create User :
+		useradd -d /home/ansibleadmin -m ansibleadmin
+		### create password for this user.
+		passwd ansibleadmin
+		
+		su - ansibleadmin
+		
+		cat /etc/passwd 		=== get the list of users 
+		
+	How to create the ssh keys 
+		
+		
+		
+useradd -m -d /home/devopsadmin devopsadmin
+
+passwd devopsadmin
+
+su - devopsadmin
+
+ssh-keygen
+
+ls ~/.ssh 
+
+#You should see following two files:
+
+#id_rsa - private key
+#id_rsa.pub - public
+
+cd /home/devopsadmin/.ssh
+
+cat id_rsa.pub > authorized_keys
+
+chown -R devopsadmin /home/devopsadmin/.ssh
+chmod 600 /home/devopsadmin/.ssh/authorized_keys
+chmod 700 /home/devopsadmin/.ssh
+
+#make devopsadmin user as a owner to tomcat dir :
+
+chown -R devopsadmin /opt/tomcat
+
+/home/devopsadmin		
+		
+		
+		From Jenkins Master --- connect to QA-Server (IP_Addr),username: devopsadmin1 , private_key
+		
+		
+		Infra TEam :::
+		
+		Admin 
+		
+			install git in all the developers machine 100 Developers 
+		
+			yum install git 
+		
+		As an Admin , I use Ansible Tool to perform this task 
+		
+		Install Ansible in one Machine(Controller Machine)
+				Connect to all the 100 Machines 
+		
+		
+		
+		1 : 100 
+		
+		SSH Connection (ID_Addr,UserID,Keys(Private/Public)
+		
+		
+	Linux SCRIPTS ::
+	
+		Set of instructions that we use to perform some task on Linux :
+		
+		echo 
+		ls 
+		mkdir 
+		cd 
+		
+	Linux :::
+	
+		1 - Using Adhoc Command
+		
+		2 - Using Scripts 
+		
+	Build Blocks of Scripting Lang. 
+	
+	
+		-	file/script type 
+				*.sh												*.py
+		-	comments	- are used to document the script 
+				Starts with #
+		-	commands/Instructions/Statements 
+				echo "Hello"
+		-	variables 
+				echo "$var1"
+		- 	group of variables
+				arrays 
+		-	Conditional Statements
+					Assignment Operator : a="Team" 
+					Conditional Operator: ==
+					
+				if statements
+					a = 10
+					b = 80
+					if a > b 		>,<,==,!=, Logical Operators AND - OR - NOT 
+						
+						echo "a is greater"
+					else 
+						echo "b is greater"
+					fi 
+		-	Iterations
+				for loop
+		-	Files 
+		
+	
+				
+	Linux --> python --> yaml --> groovy -->
+		
+
+	
+	
+#!/bin/bash
+
+a="Team"
+
+echo "Hello $a"
+
+b="Hai"
+
+echo "Hello $b"
+
+echo "Hello $1 $2"					# Arguments
+
+sudo yum install vim -y
+
+	
+
+Create a shell script  to install :	
+
+git 
+jenkins
+ansible 
+
+		exit 1  ===> Terminate the script normally.
+		
+			file --- 10000
+			
+				sequential file 
+			
+			var1="Hello"					Scalar 
+			
+			var2={"a", "b", "c", "d", "e"} 	list 
+			
+				index : Index always starts with zero 
+				
+			var2 ==> 0,1,2,3,4
+			
+			
+			Array :::	Group of variables of same data type and size 
+					
+			
+				adfasdfadf
+				adfasdfadfasdfasdf
+				adfasdfadfadfasd
+				hai						terminate ---> exit 1
+				asdfsdfasd
+				asdfsdfasd
+		
+		
+
+				
+				key sequential file 
+				
+				1 asadf 	sadf
+				2 adf   	asdf
+				3 adf   	adf 
+
+	
+
+#!/bin/bash
+num=150
+if [ $num -gt 100 ] && [ $num -lt 200 ]
+then
+        echo "The number lies between 100 and 200"
+fi
+
+7 ==> prime number or not ?
+
+1 
+2 
+3
+4
+5
+6
+
+vowels!!! 
+
+
+*********************************************************
+
+
+#!/bin/bash
+a="Team"
+echo "Hello $a"
+b="Hai"
+echo "Hello $b"
+echo "Hello $1 $2"
+sudo yum install vim -y
+
+
+*********************************************************
+
+# !/bin/bash
+num=150
+if [ $num -gt 100 ] && [ $num -lt 200 ]
+then
+        echo "The number lies between 100 and 200"
+fi
+
+*********************************************************
+
+# !/bin/bash
+
+if [ $# -ne 1 ]
+then
+        echo "You need to enter the year."
+        exit 1
+fi
+
+year=$1
+
+if [ $[$year % 400] -eq "0" ]
+then
+        echo "$year is a leap year!"
+elif [ $[$year % 4] -eq 0 ]
+then
+        if [ $[$year % 100] -ne 0 ]
+        then
+                echo "$year is a leap year!"
+        else
+                echo "$year is not a leap year."
+        fi
+else
+        echo "$year is not a leap year."
+fi
+
+
+*********************************************************
+
+# !/bin/bash
+Balance=900
+if ((Balance < 0)); then
+  echo "Balance is less than zero, Please add more funds else you will be charged penalty"
+elif ((Balance == 0)); then
+  echo "Balance is zero, please add funds"
+else
+  echo "Your balance is above zero."
+fi
+
+
+*********************************************************
+
+#!/bin/bash
+read -p "Enter theory marks: " quiz_marks
+read -p "Enter practical marks: " assignments_marks
+if (($quiz_marks > 50));
+then
+  echo "Please check the input marks for quiz."
+elif (($assignments_marks > 50));
+then
+  echo "Please check the input marks for assignments."
+else
+  echo " Your total marks: sum=$(( quiz_marks + assignments_marks))"
+fi
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Loops are used in any programming language to execute the same code repeatedly. Three types of loops are mainly used in programming for doing repetitive tasks. These are for, while, and do-while/repeat-until loop. You can apply for loop on bash script in various ways. Some useful BASH for loop examples has been mentioned in this article.
+
+Syntax of for loop:
+
+# loop through a list
+for value in list
+do
+    commands
+done
+
+# loop specified values
+for value in file1 file2 file3
+do
+    commands
+done
+
+# loop through strings resulting from a command
+for value in $(Linux command)
+do
+    commands
+done
+
+# loop through increment or decrement numbers
+# traditional procedural for loop
+for (( i=0; i<10; i++)
+do
+    commands
+done
+
+According to the above syntax, the starting and ending block of for loop is defined by do and done keywords in the bash script.
+
+
+
+Example-1: Reading static values
+Create a bash file named loop1.sh with the following script to read the values from a list using for loop. In this example, 5 static values are declared in the lists. This loop will iterate 5 times, and each time, it will receive a value from the lists and store it in the variable named color that will print inside the loop.
+
+
+#!/bin/bash
+# Define loop to read string values
+for color in Blue Green Pink White Red
+do
+    # Print the string value
+    echo "Color = $color"
+done
+
+
+Example-2: Reading Array Variable
+You can use for loop to iterate the values of an array. Create a new bash file named loop2.sh with the following script. In this example, the loop retrieves the values from an array variable named ColorList, and it will print the output only if the Pink value is found in the array elements.
+
+
+#!/bin/bash
+# Declare and array
+ColorList=("Blue Green Pink White Red")
+# Define loop to  iterate the array values
+for color in $ColorList
+do
+    # Check the value is pink or not
+    if [ $color == 'Pink' ]
+    then
+            echo "My favorite color is $color"
+    fi
+done
+
+
+
+Example-3: Reading Command-line arguments
+
+Command-line arguments values can be iterated by using for loop in bash. Create a new bash file named loop3.sh with the following script to read and print the command-line argument values using for loop.
+
+#!/bin/bash
+# Define loop to read argument values
+for myval in $*
+do
+    # Print each argument
+    echo "Argument: $myval"
+done
+
+
+
+
+Example-4: Finding odd and even number using three expressions
+The C-style syntax of for loop is three expression syntax. The first expression indicates initialization, the second expression indicates termination condition, and the third expression indicates increment or decrement. Create a bash file named loop4.sh with the following script to find out the odd and even numbers from 1 to 5.
+
+
+#!/bin/bash
+
+# Define for loop in C-style format
+for (( n=1; n<=5; n++ ))
+do  
+    # Check the number is even or not
+    if (( $n%2==0 ))
+    then
+        echo "$n is even"
+    else
+        echo "$n is odd"
+    fi  
+done
+
+=,-,/,* = %
+
+
+Example-5: Reading file content
+You can use for loop to read the content of any file by using the ‘cat’ command. Suppose you have a file named ‘weekday.txt‘ which contains the name of all weekdays. Now, create a bash file named loop5.sh to read and print the content of the file.
+
+#!/bin/bash
+# Initialize the counter
+i=1
+# Define for loop to read the text file
+for var in `cat weekday.txt`
+do
+    # Print the file content
+    echo "Weekday $i: $var"
+    ((i++))
+done
+
+
+Example-6: Create infinite for loop
+
+Create a bash named loop6.bash with the following script to know the way to declare infinite for loop. Here, the loop will iterate for infinite times and print the counter value until the user presses Ctrl+C.
+
+#!/bin/bash
+# Initialize counter variable
+counter=1
+# Display message for termination
+echo "Press Ctrl+c to terminate from the loop"
+# Define infinite loop
+for (( ;; ))
+do
+   # Print the number of iteration
+   echo "Iterating for $counter time(s)."
+   # Wait for 1 second
+   sleep 1
+   # Increment the counter
+   ((counter++))
+done
+
+
+
+Example-7: Use of for loop with command substitute
+Create a bash file named loop7.bash with the following script to know the use of for loop to read and print the command output.
+
+#!/bin/bash
+echo "All bash files starting with 'a' are:"
+
+# Read the output of command substitute using for loop
+for val in $(ls a*.bash)
+do
+    # Print the file name
+    echo "$val"
+done
+
+
+Example-8: Conditional exit with break
+Create a bash file named loop8.bash with the following script to know the way to exit from the loop based on any particular condition.
+
+#!/bin/bash
+# Define a for loop to iterate 10 times
+for (( i=1; i<=10; i++ ))
+do  
+    # Define the conditions to terminate the loop
+    if (( $i%3==0 && $i%6==0 ))
+    then
+        # Terminate from the loop
+        echo "Terminated."
+        break
+    else
+        # Print the current value of i
+        echo "The current value of i is: $i"
+    fi  
+done
+
+Example-9: Early continuation with continue statement
+
+Create a bash file named loop8.bash with the following script to know how to omit one or more statement(s) from the loop by using a continuous statement based on the particular condition.
+
+#!/bin/bash
+# Declare an associative array
+declare -A Applicants
+# Intialize the array values
+Applicants=( [1022]="Present" [1034]="Present" [1045]="Absent" [1067]="Present" )
+
+echo "List of the applicant's ID who are present:"
+for k in ${!Applicants[@]}
+do
+     # Filter the applicant's ID who are absent
+     if [ ${Applicants[$k]} == "Absent" ]; then
+        continue
+     else
+        # Print the applicant's ID who are present
+        echo $k
+     fi
+done
+
+
+echo "enter number"
+read num
+function prime
+{
+for((i=2; i<=num/2; i++))
+do
+  if [ $((num%i)) -eq 0 ]
+  then
+    echo "$num is not a prime number."
+    exit
+  fi
+done
+echo "$num is a prime number."
+}
+r=`prime $number`
+echo "$r"
+		
+
+
+
+
+
+
+
+
+*********************************************************************
+DevOps Introduction ::::
+*********************************************************************
+
+	
+	DevOps Services :::
+	
+		AWS ?
+			EC2 Instances 					- VM's -- DEV,TEST,PROD
+			IAM								
+			RDS								
+			Loadbalancer					- 
+			ECR								- Elastic Container Registry 
+			EKS								- Elastic Kubernetes Service managed service for container orchestration!
+			CloudFront						- 
+			AutoScaling
+			AWS S3(Simple Storage Service)
+	
+		AWS Managed Dev Services:
+			Code Commit					-- github
+			Code Pipeline				-- jenkins
+				
+	Deploy Application!
+	
+		*.war   -- Package 
+			
+		converted as an Application docker Image and exec as a Docker container!
+		Docker 
+		
+	DEV 
+		Created Src Code :index.jsp
+		Build --> Compile and create artifacts(index.war) 			ubuntu, jdk1.8
+		package this artifacts with all its dependencies and create docker image. image(index.war,ubuntu,jdk1.8)
+		
+		Container Registry!
+		
+			AWS :: ECR - paid services 
+			
+			DockerHub --> used to manage the docker images
+		
+		
+		Deploy to target environment 
+		
+	QA 		ubuntu, jdk1.6	index.war		convert that docker image to docker container and execute.
+	UAT 					index.war		convert that docker image to docker container and execute.
+	PROD  					index.war		convert that docker image to docker container and execute.
+	
+	Container ORchestrators!
+	
+		Docker Swarm 	self-managed 
+		Kubernetes!		self-managed	
+		
+		
+		
+·	     Evolution of Waterfall, Agile and DevOps
+·        What is DevOps
+·        Why DevOps
+·        Benefits of DevOps
+·        DevOps Stages
+·        DevOps Lifecycle
+·        Various Automation in DevOps
+·        Overview of CICD
+
+@@@@@@@@@
+DAY-9
+@@@@@@@@@
+	
+Continuous :
+Development 	--> IDE, GIT(VCS)
+Integration		--> Jenkins, build tool 
+Delivery		--> Ansible, puppet 
+Deployment		--> Docker, Ansible, Kubernetes
+Testing			--> Selenium, JUnit
+Monitoring		--> Promethus, Grafana, Datadog, Nagios
+
+	Continuos Improvement! can be achieved Only thru Continuos Interaction!	
+
+	Version Control System :
+	
+		What ?
+		Why ?
+		How ?
+		
+	Pre-req : Install GIT.
+		in Window/Linux/Mac
+	
+	GIT Misc Commands!
+	Init ---> Expert level!
+	
+	- What is Version Control System??? 
+		- Source Code Management System.
+		- 
+	
+	- Why VCS ???
+		- To keep track of changes
+		- 
+		
+	- How to use VCS?
+		- Thru. GIT
+		
+	
+	Use Case 1:
+	
+	- Developer1 --> 
+		Web-Application :
+			Java,jsp,html,css,angular
+			Visual Studio Code ( IDE )
+
+		loginpage.jsp 
+		index.jsp 
+		sign.jsp 
+		
+		Eg.: index.jsp 10lines
+		
+			<html>
+			----
+			-
+			--
+			-
+			-
+			-
+			-
+			-
+			-
+			-
+			</html>
+		
+		tested this piece of code! 
+		
+		index.jsp 20+ lines
+		
+			<html>
+			----
+			-
+			--adfasdfasdf
+			-
+			-adfasdfasdf
+			-
+			-
+			-
+			-
+			-
+			</html>
+	
+		
+		index.jsp 30+ lines ---> 
+		
+			<html>
+			----
+			-
+			--adfasdfasdf
+			-
+			-adfasdfasdf
+			-adfadfasd
+			-vdv
+			-
+			-
+			-
+			</html>
+			
+			
+		Whenever I save the src code, it should be version controlled.
+			- It helps to track the changes 
+			- Quick go back / revert my changes 
+		
+		index.jsp ---- 10 lines --> saved -- v1.0
+		index.jsp ---- 10 lines --> saved -- v1.1
+		index.jsp ---- 10 lines --> saved -- v1.2	-- v1.2 
+		index.jsp ---- 10 lines --> saved -- v1.3 -- Latest version
+
+	Use Case 2:
+		
+		Multi user envi. developer 1 & Developer 2
+
+			
+		index.jsp ---- 10 lines --> saved -- v1.3 -- Latest version
+		
+		Common repostiory ( source code repository) 
+		
+		jdk 1.8
+		jdk 11 jdk11.war 
+		
+		jdk 12   jdk12.war ---> release / tag / version
+
+		jdk 11 
+		
+	Version Control @ source code level:
+		source code level 
+			index.jsp ---- 10 lines --> saved -- v1.0			build - artifacts v1.0.war
+			index.jsp ---- 10 lines --> saved -- v1.1
+			index.jsp ---- 10 lines --> saved -- v1.2	-- v1.2 
+			index.jsp ---- 10 lines --> saved -- v1.3 -- Latest version
+		
+		artifact level  artifacts v1.0.war
+			Artifactory Library / Repo.
+				Azure Artifactory
+				JFrog Artifactory
+	
+	
+	Use Case 3: 
+	
+		Production Deployment : 
+		
+		deployment window/time frame --- 4-hours 
+		v1.4
+		index.jsp v1.5 --> thorough prod testing ---> if I find any issue?  
+			-	first, try to fix that issue within that deployment window (4hours) -- Hotfix / adhoc 
+			-   revert the changes!
+			
+			
+	GIT :: Distributed VCS 
+
+		Who are gng to use ??
+		
+		Developers.			programs 
+		
+		due to DevOps 
+		
+			Testing,
+			DevOps Team,
+			Infra-Team 
+			Security team 
+			
+			can able to use GIT for maintaining and managing their Automation Scripts (shell, yaml, groovy, python)
+		
+			GITOps -->  
+		
+		
+		
+		
+		index.jsp 
+			-
+			-
+			-
+			-
+			-
+			save ver1
+			
+		edit index.jsp 
+			-
+			-
+			-
+			-
+			--
+			
+			save ver2
+			
+			
+		
+		VCS 
+			Types of VCS 
+				Local
+				Central
+				Distributed 				
+				
+		About GIT
+			Features & Capabilities
+		
+		Features :
+		
+			GIT Workflow!
+			GIT Branching Strategies!
+			
+		Parallel Development :
+			
+		index.jsp ===> 
+		
+		index.jsp ===> 
+		
+		GIT Workflow :::
+		
+			
+	On-Prem servers/environments - Data Center!
+	
+		dev-servers,test,prod,
+		dbase servers,
+		git servers
+		jenkin servers 
+		Network servers like proxy servers 
+
+	Cloud 
+		IAAS	-> hardware 
+		PAAS	-> hardware/OS 
+		SAAS 	-> hardware/OS/Applications --> just Use. 
+	
+	Distributed VCS GIT :
+	
+		Local GIT Repo							(vs) 									Remote GIT Repo
+	
+									push the changes to remote repo 					Open-source / self-managed DVCS
+																							GitHub
+																							GitLab
+																							Bitbucket 
+																								
+																						Cloud provided Managed DVCS
+																							AWS : code commit
+																							Az  : Azure Repository
+																							GCP : Google Repos
+																							
+
+		GIT Workflow!
+
+		Local Repo																		Remote Repo
+
+		Workspace / working dir.
+		project_folder				add this to git local repo 
+			index.jsp 
+	
+																						
+		Git Workflow Commands :
+		
+			git fork 			==> used to copy the complete remote repo at the remote level 
+			git clone			==>	copy the complete repo from remote to local machine(preferably do this for the first time) 
+			git add 			==> add the changes from working dir to staging area
+			git commit 			==> commits the changes from staging area to local repo.
+			git push 			==> used to push the changes from local to remote repo.
+			git fetch			==> used to check, if there is any incremental changes in remote repo and update the local repo it will never directly impact the working dir. Hence if needed, use git merge or checkout or pull to update working dir.			
+			
+			git pull			==>	used to check, if there is any incremental changes in remote repo and directly update the changes in local repo and the working dir.
+			
+			i.e., git pull ==> git fetch + git merge 
+			
+			git clone (vs) fork
+			
+		
+			github-loksai-repo ==> forked and created git-hub-samplerepo1 ==> clone to local --> make change --> add, commit --> push  
+			
+			git clone 		-- copy the remote repo to local repo. 
+				
+			git fork 		-- used to create the backup of remote repositories.
+
+		
+		Installation of GIT ::::
+			
+			Windows :::			
+				git bash
+				git gui 
+				
+			ubuntu
+				apt-get install git -y
+				
+		
+		git Bash :::
+
+		Open Git Bash 
+		
+			cd d:
+				mkdir staragile
+				cd staragile
+					mkdir project1
+					cd project1
+			
+			
+			
+		Working directory / project folder							Staging Area					Local Repo 
+			
+			file1.txt 												file1.txt
+			
+		
+		git init 	- 	is used to initialize the local repo.
+						creates default branch called 'master'
+		git status	-	used to get the current status of the git repository 
+		
+		git add file1.txt
+		
+		git commit -m "CR#1111 changes made for file1.txt"
+		
+		Track the changes ???
+				
+				Which file has been changed, 
+				What changes ?
+				Who made the changes ?
+				When the changes are made? 
+	
+		Configure GIT User Name and Email_ID
+			
+		git config user.email "adfadf@gmail.com"
+		git config --global user.email "adfadf@gmail.com"
+
+	
+	Summary :::
+		
+		VCS & Types 
+		Git Installation
+		Git workflow
+		git basic commands to work in local repo
+		
+@@@@@@@@@@
+DAY-10
+@@@@@@@@@@
+
+	Misc GIT Commands:
+	
+	git log 
+	
+	git diff 
+	
+	git rm --cached <file1.txt> 
+	
+	git rm -f <file.txt>
+	
+	**** git revert  & reset !!!!
+	
+	- git-ignore!
+	
+		
+	web_appln_project 				--> git init 	--> git push -- and pushed to remote repo. 
+		index.jsp
+		sign.java
+		payment.java
+		
+		s1.class
+		s1.war
+		
+		readme.txt
+		req.doc 
+		
+		secrets.json
+		dbcredentials.json 
+		
+	vi .gitignore 
+		
+		s1.class
+		s1.war
+		
+		readme.txt
+		req.doc 
+		
+		secrets.json
+		dbcredentials.json 		
+		
+	Best Practise :: Always .gitignore file should be added and it shd be the very first commit.
+	
+	
+	folder 
+	
+	web_appln_project 				--> git init 	--> git push -- and pushed to remote repo. 
+
+	git init
+	
+		index.jsp
+		sign.java
+		payment.java
+		
+		s1.class
+		s1.war
+		
+		readme.txt
+		req.doc 
+		
+		secrets.json
+		dbcredentials.json 
+	
+	git add .
+	
+	git commit -----
+	
+	vi .gitignore 
+		s1.class
+		s1.war		
+		readme.txt
+		req.doc 
+		secrets.json
+		dbcredentials.json 
+		dbsecrets.json
+	
+	
+	git commit -- 
+	
+	echo "adfasd" >> req.doc 
+	
+	1 -- 1000 
+	
+	dbsecrets.json
+	
+	vi .gitignore 
+	dbsecrets.json
+	
+	echo "dbsecrets.json" > .gitignore
+	
+	
+	---> 
+	
+	There are 3 types of files in git perspective 
+	
+		- Untracked File 
+		
+		- Tracked File 
+		
+		- Ignored File
+		
+	
+	
+	Best Practise :: Always .gitignore file should be added and it shd be the very first commit.
+	
+	DevOps_release_automation_project:									===> after git_push -- this can be accessible by anyone in portfolio
+	
+		*.py
+		*.tf
+		ansible/*.yaml
+		*.groovy 
+		*.yaml	
+
+		dev1.config 				### I never maintain like this 
+		dev2.config 				### I never maintain like this
+ 		
+		config/
+			dev1.config 					 
+			dev2.config 				
+			dev.config
+			qa.config
+			uat.config
+			prod.config 
+		secrets/
+			dev.secrets
+			qa.secrets
+			uat.secrets
+			prod.secrets 
+		
+		vi .gitignore 
+		
+			config/
+			secrets/
+	
+	GIT Repo Orgn. ---> created for one protfolio 
+	
+		DevOps Team 
+		
+	ORgn --> DevOps & AD Team Lead & Release Team Leads & Testing Team Leads
+		
+	
+	
+	GIT Reset !
+	
+		head, add, commit 
+		
+		Working Dir, Staging, Local Repo 
+	
+	
+	git reset --soft 	
+		--> It just move the HEAD pointer to previous commit point. Changes will be retained in staging area and Working dir. 
+		- 
+	git reset --mixed
+		--> It just move the HEAD pointer to previous commit point. Changes will be removed from staging area. but, retained in Working dir. Is default.
+		
+	git reset --hard 
+		--> It move the HEAD pointer to previous commit point. Changes will be completely removed from staging area and Working dir. --> risky one. It is NOT recommended. 
+	
+	
+	git reset will just reset to previous commit. It will never create new commit point. 
+	
+	
+	GIT REVERT 
+	
+		git revert <commit_id>
+		
+		git revert will create new commit point. 
+		
+	reset & revert!!!
+		
+		prod deployment ::: 
+		
+			
+	
+	Application ::::
+	
+		deployed one appln --> creating some reports - Daily Report  in a flat file1,2,3
+		
+		reset --hard 
+		
+		stored in a temp repository ---> read that file from this temp repo and process it.
+		
+		then, the formated file will be permanently stored in a actual repo. 
+		
+		Repository 
+		
+		
+		Daily I need add new processed file to actual repo. -- version controlled. 
+		file 1,2,3,4,5 -- HEAD
+	
+		git reset 2
+		
+		git revert 
+		
+		branch --- 
+		
+	Commit Message 	--> should follow certain standards
+					PROD_ID 
+					CR_Number 
+					
+		git commit --amend -m "Actual Commit Message"
+		
+	
+	
+  453  cd d:
+  454  mkdir staragile
+  455  cd staragile/
+  456  ls
+  457  clear
+  458  pwd
+  459  mkdir project1
+  460  cd project1/
+  461  pwd
+  462  cd ..
+  463  mkdir project2
+  464  ls
+  465  cd project1
+  466  ls
+  467  clear
+  468  pwd
+  469  git init
+  470  ls
+  471  ls -a
+  472  cd .git
+  473  ls
+  474  cd ..
+  475  git branch
+  476  clear
+  477  echo "rec1" >> file1.txt
+  478  ls
+  479  cat file1.txt
+  480  git status
+  481  git add file1.txt
+  482  git status
+  483  git commit -m "Commit Message"
+  484  git log
+  485  git config --global -edit
+  486  clear
+  487  ls
+  488  git log
+  489  git config user.email "adfadf@gmail.com"
+  490  echo "rec1" >> file2.txt
+  491  git add file2.txt
+  492  git status
+  493  git commit -m "CM2"
+  494  git log
+  495  clera
+  496  clear
+  497  git config
+  498  git config --list
+  499  git config --list --global
+  500  clear
+  501  cd d:
+  502  cd staragile/
+  503  ls
+  504  clear
+  505  ls
+  506  ls
+  507  clear
+  508  ls
+  509  cd project
+  510  cd project1
+  511  ls
+  512  ls -a
+  513  cd .git/
+  514  ls
+  515  cd config
+  516  at config
+  517  cat config
+  518  ls
+  519  cd ..
+  520  clear
+  521  cd ..
+  522  cd project
+  523  cd project2/
+  524  ls
+  525  clear
+  526  ls -a
+  527  clear
+  528  git init
+  529  echo "record1" >> file1.txt
+  530  git status
+  531  git add file1.txt
+  532  git commit -m "CM1"
+  533  git status
+  534  clear
+  535  echo "rec1" >> file2.txt
+  536  echot "rec1" >> file3.txt
+  537  echo "rec1" >> file3.txt
+  538  ls
+  539  clear
+  540  ls
+  541  git status
+  542  git add file2.txt
+  543  git status
+  544  git add file3.txt
+  545  git status
+  546  git commit -m "CM2"
+  547  git log
+  548  clera
+  549  cear
+  550  clear
+  551  git log
+  552  echo "rec2" >> file1.txt
+  553  git add .
+  554  git commit -m "CM3"
+  555  clear
+  556  git log
+  557  echo "rec1" >> f1.md
+  558  git add .
+  559  git commit -m "CM4"
+  560  clear
+  561  ls
+  562  ls *.md
+  563  clear
+  564  ls
+  565  ls
+  566  ls *.txt
+  567  clear
+  568  git log
+  569  clear
+  570  git log --oneline
+  571  git log
+  572  clear
+  573  git log --stat
+  574  git log --oneline
+  575  git log -3
+  576  git log -2
+  577  git log --oneline -3
+  578  git log --stat -2
+  579  git log --stat
+  580  clear
+  581  ls
+  582  cat file1.txt
+  583  git status
+  584  echo "rec3" >> file1.txt
+  585  git status
+  586  git diff
+  587  git add .
+  588  git diff
+  589  git diff --staged
+  590  git commit -m "CM5"
+  591  git diff --staged
+  592  git diff HEAD
+  593  ls
+  594  cat file1.txt
+  595  git log --oneline
+  596  git diff a5543c9 4e758fe
+  597  git diff 4e758fe a5543c9
+  598  git diff branch1 branch2
+  599  clear
+  600  git status
+  601  echo "rec1" >> q1.txt
+  602  git status
+  603  git add .
+  604  git status
+  605  git rm --cached q1.txt
+  606  git status
+  607  git add .
+  608  git add .
+  609  git rm -f --cached q1.txt
+  610  ls
+  611  git clear
+  612  clear
+  613  git status
+  614  git status
+  615  git add .
+  616  clear
+  617  git status
+  618  git log --oneline
+  619  git commit -m "CM6"
+  620  clear
+  621  git status
+  622  ls
+  623  echo "rec1" >> a1.txt
+  624  git add .
+  625  clear
+  626  ls
+  627  git status
+  628  git rm --cached a1.txt
+  629  ls
+  630  git status
+  631  git add .
+  632  clear
+  633  git status
+  634  ls
+  635  git rm -f a1.txt
+  636  ls
+  637  git status
+  638  clear
+  639  clear
+  640  git status
+  641  git log --oneline
+  642  clear
+  643  clear
+  644  cd ..
+  645  mkdir project3
+  646  cd project3/
+  647  clear
+  648  git status
+  649  git init
+  650  git status
+  651  clear
+  652  vi .gitignore
+  653  cat .gitignore
+  654  git status
+  655  git add .
+  656  git commit -m "Initial Commit with .gitignore file"
+  657  git log
+  658  clear
+  659  cat .gitignore
+  660  echo "rec1" >> f1.txt
+  661  echo "rec1" >> q1.doc
+  662  git status
+  663  ls
+  664  echo "rec1" >> xxxx.md
+  665  git status
+  666  echo "rec1" >> s1.class
+  667  git status
+  668  ls
+  669  clear
+  670  ls
+  671  ls -a
+  672  cat .gitignore
+  673  clear
+  674  git log
+  675  clear
+  676  git status
+  677  git add .
+  678  git commit -m " blablabla"
+  679  clear
+  680  git status
+  681  cd ..
+  682  mkdir project4
+  683  cd project4
+  684  clear
+  685  ls
+  686  git init
+  687  echo "rec1" >> f1.txt
+  688  git add .
+  689  git commit -m "CM1"
+  690  clear
+  691  git status
+  692  ls
+  693  git log --oneline
+  694  echo "rec1" >> f2.txt
+  695  git add .
+  696  git commit -m "CM2"
+  697  echo "rec1" >> f3.txt
+  698  git add .
+  699  git commit -m "CM3"
+  700  echo "rec1" >> f4.txt
+  701  git add .
+  702  git commit -m "CM4"
+  703  echo "rec1" >> f5.txt
+  704  git add .
+  705  git commit -m "CM5"
+  706  clear
+  707  git log --oneline
+  708  ls
+  709  git status
+  710  clear
+  711  ls
+  712  git ls-files
+  713  git log --oneline
+  714  git reset --soft 31300a8
+  715  git status
+  716  git ls-files
+  717  ls
+  718  git log --oneline
+  719  git commit -m "CM5"
+  720  git log --oneline
+  721  git ls-files
+  722  ls
+  723  git status
+  724  clear
+  725  git log --oneline
+  726  git ls-files
+  727  ls
+  728  git reset --mixed 31300a8
+  729  git ls-files
+  730  ls
+  731  git log --oneline
+  732  git status
+  733  git add .
+  734  git commit -m "CM5"
+  735  clear
+  736  git ls-files
+  737  ls
+  738  git log --oneline
+  739  git reset --hard 31300a8
+  740  git ls-files
+  741  ls
+  742  ls -a
+  743  git status
+  744  git log --oneline
+  745  clear
+  746  echo "rec1" >> file5.txt
+  747  git add .
+  748  git commit -m "CM5"
+  749  clear
+  750  git log --oneline
+  751  git revert 9507410
+  752  git log --oneline
+  753  ls
+  754  git ls-files
+  755  clear
+  756  git log --oneline
+  757  clear
+  758  cd ..
+  759  mkdir project5
+  760  cd project5
+  761  git init
+  762  clear
+  763  echo "rec1" >> file1.txt
+  764  echo "rec1" >> file1.txt
+  765  echo "rec1" >> file1.txt
+  766  echo "rec1" >> file1.txt
+  767  echo "rec1" >> file1.txt
+  768  cat file1.txt
+  769  git add .
+  770  git commit -m "ADFASDF"
+  771  clear
+  772  git log --oneline
+  773  git log
+  774  git log --oneline
+  775  git commit -m "CM1"
+  776  git commit --amend -m "CM1"
+  777  git log --oneline
+  778  clear
+  779  git log --oneline
+  780  git show 5a932bc
+  781  echo "rec6" >> file1.txt
+  782  git add .
+  783  git commit -m "CM2"
+  784  git log --oneline
+  785  git log --stat
+  786  git log --oneline
+  787  git show e100bbf
+  788  vi file1.txt
+  789  git add .
+  790  git commit -m "CM3"
+  791  git log --oneline
+  792  git show a08a613
+  793  git log --stat
+  794  history
