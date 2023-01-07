@@ -2407,8 +2407,6 @@ DAY-10
 	reset & revert!!!
 		
 		prod deployment ::: 
-		
-			
 	
 	Application ::::
 	
@@ -2421,7 +2419,6 @@ DAY-10
 		then, the formated file will be permanently stored in a actual repo. 
 		
 		Repository 
-		
 		
 		Daily I need add new processed file to actual repo. -- version controlled. 
 		file 1,2,3,4,5 -- HEAD
@@ -2438,7 +2435,463 @@ DAY-10
 					
 		git commit --amend -m "Actual Commit Message"
 		
+
+@@@@@@@@@
+DAY-11
+@@@@@@@@@
+
+		subversion!
+		
+			VCS 
+				LVCS	
+				CVCS	google drive / docs /excel sharepoint - team -- subversion - CVCS 
+				DVCS 	github
+
+VMS - install subversion tool
+
+dev1  java progm 
+dev2 
+dev3 
+commit -- versions 
+
+		GIT Branching Strategies!
+		
+		git init ???
+		
+		master branch is the default branch 
+		
+		main branch 
+		
+		prod 
+		
+		git init --> 
+
+		What is Branch ?
+		
+		Why we need Branch ?
+
+		VCS ===> DVCS ---> Enable Parallel Development!
+
+
+	folder/dir
+	master branch:
+		index.jsp program!
+		
+			function : signin, signup, 
+
+	feature-dev1
+		index.jsp program!
+
+	feature-dev2
+		index.jsp program!
+
+		dev1 - signin
+		dev2 - signup 
+		
+	GIT Branching Strategies :::
 	
+	
+	master 																	master as prod copy 
+		index.jsp (10 lines) 1MB
+	
+		feature1	index.jsp (10 lines)																						
+				index.jsp -- all the increment changes are done in feature branch. 
+		feature2
+				index.jsp -- all the increment changes are done in feature branch.
+		feature3
+				index.jsp -- all the increment changes are done in feature branch.
+		feature4
+				index.jsp -- all the increment changes are done in feature branch.
+		feature5
+				index.jsp -- all the increment changes are done in feature branch.
+		feature6
+				index.jsp -- all the increment changes are done in feature branch.
+
+Repository : 2MB
+
+	master 																	master as prod copy 
+		index.jsp (10 lines) 1MB
+		
+			feature1  ---> index.jsp (10 lines)	    	- size is 0 
+							+++10 record ++1MB			- it is still 1 MB
+							
+			feature2  ---> index.jsp (10 lines) 1MB	  	- size is 0
+							+++5 record ++.5MB			-	size is .5MB
+			
+			feature3  ---> index.jsp (10 lines) 1MB	  	- size is 0
+							+++5 record ++.5MB			-	size is .5MB
+			
+	if we merge feature1 to master :
+	
+	master 
+		index.jsp (20 lines) 2MB
+	
+			feature1 ----> index.jsp (20 lines)			- size is 0
+
+
+Single user1
+		
+		Local git install 
+	
+	master 																	master as prod copy 
+		index.jsp 5MB
+	
+		feature1	index.jsp 																						
+				index.jsp -- all the increment changes are done in feature branch. 
+		feature2
+				index.jsp -- all the increment changes are done in feature branch.
+		feature3
+				index.jsp -- all the increment changes are done in feature branch.
+		feature4
+				index.jsp -- all the increment changes are done in feature branch.
+		feature5
+				index.jsp -- all the increment changes are done in feature branch.
+		feature6
+				index.jsp -- all the increment changes are done in feature branch.
+	
+	
+************************************************************************************************
+	
+GIT Branching Strategy / Policy / Process 
+	
+	master  ===> 
+	
+	Bugfix/Hotfix_Branch / Adhoc_Branch   ===> Make the necessary code changes and test it. 
+	
+		Release_Branch
+		
+			Integration_Branch1   	--> App.Team1
+			
+				Dev_branch1			--> developer1 
+					feature1
+					feature2
+					feature3
+					feature4			
+				Dev_branch2			--> developer2 
+					feature1
+					feature2
+					feature3
+					feature4
+					feature5
+		
+			Integration_Branch2		--> App.Team2
+			
+				Dev_branch1			--> developer1 
+					feature1
+			
+				Dev_branch2			--> developer2 
+					CR1002
+					CR1001
+
+
+	New_Project			 
+	Bug_Fixing 
+	CR-Change Request	---> CR_Number
+
+DEMO :
+	
+	Basic command to work on GIT Branches!
+
+
+	master
+		
+		f1
+		
+		f2
+		
+		f3
+		
+		f4 
+
+
+
+
+
+		git branch  -- list branch
+		
+		git branch f1 -- create branch
+
+		git switch -c f1 -- create branch and switch
+
+		git checkout -b f1 -- create branch and switch
+		
+		git switch/checkout f1 -- just to switch to existing branch 
+		
+		git merge 
+		
+		
+		master -- file1.txt					 2rec ==> 4rec ==> 
+		
+			f1 --> update file1.txt	 with 2rec 		+2rec 	
+			
+			f2 --> update file1.txt	 with 2rec		+2rec 
+		
+master		
+		zzzz
+		aaaa
+		
+master	(f1)		(f2)
+		zzzz		zzzz	
+		aaaa		aaaa
+		vvvv		qqqq
+		cccc		wwww
+
+		
+f1		
+		zzzz
+		aaaa
+		vvvv
+		cccc
+
+f2 
+		zzzz
+		aaaa
+		qqqq
+		wwww
+		
+		
+	once f1 merges to master 
+	
+		zzzz
+		aaaa
+		vvvv
+		cccc		
+		
+	when f2 merges to master 	
+
+		zzzz
+		aaaa		
+		vvvv
+		cccc		
+		qqqq
+		wwww				
+	
+	Create Merge Confict
+	
+			- When the same file is updated by more than users in the same lines, we get merge conflict.
+		
+	How to fix Merge Conflict ?
+	
+		- Identify the file(s) which is causing the conflict.
+		
+		- Discuss with the team who made the changes, review and finalize the changes to be merged into target branch 
+		
+		- Update the file 
+		
+		- Add and Commit the changes.
+
+	master
+		Dev_branch1
+			feature1
+			feature2
+			
+	To Prevent Merge Conflict :
+	
+		- Review the chanages before Merge.
+		
+		- Always pull/fetch the changes into the current branch before merging to target branch 
+	
+	
+		
+master		
+		zzzz
+		aaaa
+		
+f1		
+		zzzz
+		aaaa
+		vvvv   
+		cccc
+
+	git merge f1 
+
+master		
+		zzzz
+		aaaa
+		vvvv
+		cccc	
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
+
+f2 
+		zzzz
+		aaaa
+		qqqq
+		wwww		
+		
+	Always pull/fetch the changes into the current branch before merging to target branch
+	
+f2 		
+		zzzz
+		aaaa
+		vvvv
+		cccc
+		qqqq
+		wwww
+
+	git merge f2
+	
+		Before merge, just do fetch/pull/rebase
+		
+
+
+	master : cm1,cm2
+	
+		feature1 : cm1,cm2,cm1-f1,cm2-f1 
+		
+		git merge feature1 :: 
+		
+			master : cm1,cm2,cm1-f1,cm2-f1 
+
+		feature2 : cm1,cm2,cm1-f2,cm2-f2
+		
+		
+		git rebase master 
+		
+			feaure2 : cm1,cm2,cm1-f1,cm2-f1,cm1-f2,cm2-f2
+
+		git merge feature2 ::
+	
+			master : 
+			
+			
+	
+	master : cm1,cm2 
+	
+		f1: cm1,cm2 
+		
+				   ,cm1f1,cm2f1 
+				   
+		merge to master ::: cm1,cm2,cm1f1,cm2f1
+		
+		f2: cm1,cm2,cm1f2,cm2f2
+	
+				   ,cm1f2,cm2f2	
+	
+		merge to master ::: cm1,cm2,cm1f2,cm2f2,cm1f1,cm2f1
+	
+	rebase :: 
+	
+	git rebase master 
+		f2: cm1,cm2,cm1f1,cm2f1,cm1f2,cm2f2
+	
+	
+	Rebase ::: is one of the best practises to keep your current branch in-sync with your target branch.
+	
+	
+	Local Repo 								 		Remote Repo 
+	
+	rebase 											fetch/pull
+	
+	
+	Summary :
+	
+		Rebase :
+		
+			- Is one of the best practises to keep your current branch in-sync with your target branch.
+			
+			- Always issue rebase command before you merge the changes into target branch
+
+		Fetch/Pull :
+
+			- Is one of the best practises to keep your local Repo branch in-sync with your remote branch.
+			
+			- Always issue fetch/pull command before you push the changes into remote repo.
+
+
+	SQUASH :
+	
+	
+		master : ---> cm1,cm2,cm3,cm1f1,cm2f1,cm3f1,...........,cm100f1,cm1f2,cm2f2,cm3f2,...........,cm100f2
+		
+				feature1	--> cm1f1,cm2f1,cm3f1,...........,cm100f1 --> merge 
+				
+				feature2	--> cm1f2,cm2f2,cm3f2,...........,cm100f2 --> merge
+				
+				feature3	--> cm1f3,cm2f3,cm3f3
+	
+		Squash :::: Combine all the commits and create a new commit point and merge into the target.
+	
+		Squash :::::::
+		
+			Before Merge. i.e., while you are working in the current branch
+				git rebase -i HEAD~10
+			
+			While Merging :			
+				git merge --squash feature1
+		
+		index.html 
+		
+		<html>
+			-----
+			----
+			---
+			-
+			-<>
+			func1() -- 10 commits 
+			-
+			-			
+			-
+		</html>	
+	
+	
+	
+	
+	master  ===> release version v1.0(Tags)
+	
+	Bugfix/Hotfix_Branch / Adhoc_Branch   ===> Make the necessary code changes and test it. 
+	
+		Release_Branch											git merge --squash Integration_Branch1
+		
+			Integration_Branch1   	--> App.Team1				git merge --squash Dev_branch1
+			
+				Dev_branch1			--> developer1  			git merge feature1,2,3,4
+					feature1   cm1.................100
+					feature2 
+					feature3
+					feature4			
+				Dev_branch2			--> developer2 				git merge feature1,2,3,4
+					feature1
+					feature2
+					feature3
+					feature4
+					feature5
+		
+			Integration_Branch2		--> App.Team2
+			
+				Dev_branch1			--> developer1 
+					feature1
+			
+				Dev_branch2			--> developer2 
+					CR1002
+					CR1001	
+	
+	
+	Cherry pick  ::::
+	
+	master  ===> release version v1.0(Tags)
+	
+	Bugfix/Hotfix_Branch / Adhoc_Branch   ===> Make the necessary code changes and test it. 
+	
+		Release_Branch				---> 	git cherry-pick db1_cmID								
+											git merge Integration_Branch1
+											
+			Integration_Branch1   	--> App.Team1		--> db1_cmID,db2_cmID				
+			
+				Dev_branch1			--> developer1  			git merge feature1,2,3,4
+					feature1   cm1.................100
+					feature2 
+					feature3
+					feature4			
+				Dev_branch2			--> developer2 				git merge feature1,2,3,4
+					feature1
+					feature2
+					feature3
+					feature4
+					feature5
+		
+
+	
+
 	
   453  cd d:
   454  mkdir staragile
@@ -2782,3 +3235,6 @@ DAY-10
   792  git show a08a613
   793  git log --stat
   794  history
+
+
+
