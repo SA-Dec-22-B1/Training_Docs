@@ -2603,10 +2603,6 @@ DEMO :
 		
 		f4 
 
-
-
-
-
 		git branch  -- list branch
 		
 		git branch f1 -- create branch
@@ -2758,9 +2754,28 @@ f2
 	master : cm1,cm2 
 	
 		f1: cm1,cm2 
+		f2: cm1,cm2
 		
-				   ,cm1f1,cm2f1 
+		f2 : 			cm1,cm2,cm1f2
+		
+		
+		f1 :		    cm1,cm2,cm1f1 
+		
 				   
+		merged f2 to master :: cm1,cm2,cm1f2
+
+
+		merge f1 to master  :: expected linear ::: cm1,cm2,cm1f2,cm1f1 
+		
+		rebase :: 
+		
+		
+		ORT merge :: cm1,cm2,cm1f1,cm1f2
+
+
+
+
+		
 		merge to master ::: cm1,cm2,cm1f1,cm2f1
 		
 		f2: cm1,cm2,cm1f2,cm2f2
@@ -2818,7 +2833,9 @@ f2
 			
 			While Merging :			
 				git merge --squash feature1
-		
+				git commit -m "Combined commits from feature1"
+				
+				
 		index.html 
 		
 		<html>
@@ -2836,7 +2853,7 @@ f2
 	
 	
 	
-	master  ===> release version v1.0(Tags)
+	master  ===> release version v1.0(Tags)						Tag / Release_ID
 	
 	Bugfix/Hotfix_Branch / Adhoc_Branch   ===> Make the necessary code changes and test it. 
 	
@@ -2849,7 +2866,7 @@ f2
 					feature2 
 					feature3
 					feature4			
-				Dev_branch2			--> developer2 				git merge feature1,2,3,4
+				Dev_branch2			--> developer2 				git merge feature1,2,3,4					version/tag
 					feature1
 					feature2
 					feature3
@@ -2888,9 +2905,131 @@ f2
 					feature3
 					feature4
 					feature5
-		
-
 	
+	echo "rec" >> f1.txt
+	echo "rec" >> f1.txt
+	echo "rec" >> f1.txt
+	
+		git add .
+		
+	echo "rec" >> f1.txt
+	echo "rec" >> f1.txt
+	echo "rec" >> f1.txt
+	echo "rec" >> f1.txt
+
+		git add .
+		
+	git commit -m "asdfa" 
+
+@@@@@@@@
+DAY-12
+@@@@@@@@
+
+	Demo : git merge,rebase,squash,cherry-pick
+
+	Git Stash :::
+				
+		dev1 --> Working on a CR1.
+
+	repo1:
+		master 
+			feature-CR1 	---> index.html -- func1,func2,func3,..... --> added index 
+			
+			feature-Adhoc 	---> jjjj 10... 
+			
+		index.jsp  -- <Html> ------> func1,func2,func3,func4,func5
+
+
+	###Remote Repository :::
+	
+		GITHUB :::
+		
+		Local Repo 			--->          Remote Repo.
+		
+		
+		
+		
+	New_Project	
+	
+	Bug_Fixing
+	
+	CR-Change Request	---> CR_Number
+		
+		
+	How to start creating a new repo in github and push the changes from the local repo.
+		
+	How to clone/pull the changes from remote repo., make some changes in local and push the changes back to remote repo.
+		
+		
+		
+	First :
+	
+		How to clone the repo!
+		Understand the Remote Repo. UI.
+		
+		
+		
+		jdk 1.7 		release 
+		jdk 1.8
+		
+		
+		
+		
+		Prod version 		-- jdk1.9			 Release -- used by the End-users ---> if is a stable version 
+		
+		beta version 		-- jdk1.10.beta			Business Users 
+		unstable ver.
+		
+	
+	Remote Repositories	:::
+	
+		Local & Remote Repo	
+	
+	New_Project	
+				
+				git 
+					init 
+					add
+					commit 
+					
+				git remote add <remote_Repo_Name>
+				git remote -v 			used to list the remote repositories that are connect to the local repo.
+				git remote remove 
+								
+					git remote add origin1 https://github.com/LoksaiETA/dummyremoterepo2.git	
+
+
+
+
+		git fetch		==>  	just chk for the incremental changes in remote repo, update the changes in local repo
+			
+		git pull 		==> 	chk for the incremental changes in remote repo, update the changes in local repo and working directory 
+							
+		git push 		==> 	push the changes from local to remote repo 
+
+
+		
+	Bug_Fixing	
+	CR-Change Request	---> CR_Number	
+	
+
+		git clone 
+	
+		git fetch		==>  	just chk for the incremental changes in remote repo, update the changes in local repo
+								
+		git pull 		==> 	chk for the incremental changes in remote repo, update the changes in local repo and working directory 
+								===> fetch + merge 
+								
+		git push 		==> 	push the changes from local to remote repo 	
+	
+		git remote -v 			used to list the remote repositories that are connect to the local repo.
+		
+		git remote remove 	
+
+
+
+
+
 
 	
   453  cd d:
@@ -3236,5 +3375,416 @@ f2
   793  git log --stat
   794  history
 
+#Branching::::
 
-
+  362  mkdir demoproj2
+  363  clear
+  364  cd demoproj2
+  365  git init
+  366  echo "rec1" >> file1.txt
+  367  git add .
+  368  git commit -m "CM1 from master"
+  369  echo "rec1" >> file2.txt
+  370  git add .
+  371  git commit -m "CM2 from master"
+  372  clear
+  373  git log --oneline
+  374  git branch
+  375  git branch f1
+  376  git branch
+  377  git switch -c f2
+  378  git switch master
+  379  git checkout -b f3
+  380  git swithc master
+  381  git switch master
+  382  git checkout f4
+  383  git branch
+  384  git switch f4
+  385  git branch f4
+  386  clear
+  387  clear
+  388  git status
+  389  git branch
+  390  git switch f1
+  391  git branch
+  392  clear
+  393  git switch master
+  394  clear
+  395  ls
+  396  git log --oneline
+  397  git switch f1
+  398  git log --oneline
+  399  ls
+  400  git status
+  401  cat file1.txt
+  402  cat file2.txt
+  403  echo "rec1" >> file3.txt
+  404  git status
+  405  git add .
+  406  git commit -m "CM1 from f1"
+  407  git status
+  408  git log --oneline
+  409  ls
+  410  echo "rec1" >> file4.txt
+  411  git add .
+  412  git commit -m "CM2 from f1"
+  413  git log --oneline
+  414  ls
+  415  git switch master
+  416  git log --oneline
+  417  ls
+  418  git switch f3
+  419  ls
+  420  git switch master
+  421  git branch
+  422  git merge f1
+  423  git log --oneline
+  424  ls
+  425  git log --oneline
+  426  clear
+  427  clear
+  428  ls
+  429  git branch
+  430  git status
+  431  git log --oneline
+  432  cd ..
+  433  mkdir demoproj3
+  434  clear
+  435  cd demoproj3
+  436  ls
+  437  git init
+  438  clear
+  439  echo "rec1" >> file1.txt
+  440  git add .
+  441  git commit -m "CM1 from master"
+  442  clear
+  443  echo "rec2" >> file1.txt
+  444  git add .
+  445  git commit -m "CM2 from master"
+  446  clear
+  447  git switch -c feature1
+  448  git switch master
+  449  git switch -c feature2
+  450  git switch master
+  451  git log --oneline
+  452  clear
+  453  git log --oneline
+  454  git switch feature1
+  455  ls
+  456  vi file1.txt
+  457  git status
+  458  git add .
+  459  git commit -m "CM1 from feature1"
+  460  git log --oneline
+  461  git switch master
+  462  git merge feature
+  463  cat file1.txt
+  464  git switch feature2
+  465  ls
+  466  cat file1.txt
+  467  vi file1.txt
+  468  git add .
+  469  git commit -m "CM1 from feature2"
+  470  cat file1.txt
+  471  git switch master
+  472  git merge feature2
+  473  cat file1.txt
+  474  vi file1.txt
+  475  git add .
+  476  git commit -m "resolved Merge Conflict"
+  477  cd ..
+  478  mkdir demoproj4
+  479  cd demoproj4
+  480  git clone https://github.com/LoksaiETA/Java-mvn-app2.git
+  481  ls
+  482  cd Java-mvn-app2/
+  483  ls
+  484  echo "ngfdhgfhgf" > s2.txt
+  485  git add .
+  486  git commit -m " cm1 frm local"
+  487  git fetch
+  488  git remote -v
+  489  git push
+  490  clear
+  491  cd..
+  492  cd ..
+  493  ls
+  494  clear
+  495  ls
+  496  git clone https://github.com/LoksaiETA/TestRepo1.git
+  497  ls
+  498  cd TestRepo1/
+  499  ls
+  500  exit
+  501  cd d:
+  502  cd staragile/
+  503  mkdir gitdemo1
+  504  cd gitdemo1/
+  505  ls
+  506  clear
+  507  git init
+  508  echo "rec1" >> f1.txt
+  509  git add .
+  510  git commit -m "CM1 from master"
+  511  clear
+  512  echo "rec1" >> f2.txt
+  513  git add .
+  514  git commit -m "CM2 from master"
+  515  git log --oneline
+  516  clear
+  517  git switch -c feature1
+  518  git switch master
+  519  git switch -c feature2
+  520  git branch
+  521  clear
+  522  git log --oneline
+  523  ls
+  524  echo "Rec1" >> f3.txt
+  525  git add .
+  526  git commit -m "CM1 from feature2"
+  527  clear
+  528  git log --oneline
+  529  git switch master
+  530  git merge feature2
+  531  git log --oneline
+  532  clear
+  533  git switch feature1
+  534  clear
+  535  ls
+  536  echo "rec1" >> s1.txt
+  537  git add .
+  538  git commit -m "CM1 from feature1"
+  539  clear
+  540  git status
+  541  git log --oneline
+  542  git switch master
+  543  git log --oneline
+  544  git switch feature2
+  545  git switch feature1
+  546  git log --oneline
+  547  git switch master
+  548  git log --oneline
+  549  clear
+  550  git log --oneline
+  551  git switch feature1
+  552  git log --oneline
+  553  git rebase master
+  554  git log --oneline
+  555  git switch master
+  556  git merge feature1
+  557  git log --oneline
+  558  clear
+  559  git switch feature1
+  560  clear
+  561  git log --oneline
+  562  echo "rec1" >> q1.txt
+  563  git add .
+  564  git commit -m "CM2.1 from feature1"
+  565  echo "rec" >> q1.txt
+  566  git add .
+  567  git commit -m "CM2.2 from feature1"
+  568  echo "rec" >> q1.txt
+  569  git add .
+  570  git commit -m "CM2.3 from feature1"
+  571  echo "rec" >> q1.txt
+  572  git add .
+  573  git commit -m "CM2.4 from feature1"
+  574  echo "rec" >> q1.txt
+  575  git add .
+  576  git commit -m "CM2.5 from feature1"
+  577  echo "rec" >> q1.txt
+  578  git add .
+  579  git commit -m "CM2.6 from feature1"
+  580  cat q1.txt
+  581  git log --oneline
+  582  clear
+  583  git log --oneline
+  584  git switch master
+  585  git merge --squash feature1
+  586  git log --oneline
+  587  ls
+  588  cat q1.txt
+  589  clear
+  590  git switch feature2
+  591  git switch master
+  592  git commit -m "Combined commits from feature1"
+  593  git status
+  594  git log --oneline
+  595  ls
+  596  git switch feature1
+  597  git log --oneline
+  598  git switch master
+  599  cat q1.txt
+  600  clear
+  601  git switch feature2
+  602  git log --oneline
+  603  ehco "rec" >> w1.txt
+  604  echo "rec" >> w1.txt
+  605  git add .
+  606  git commit -m "CM2.1 from feature2"
+  607  clear
+  608  echo "rec" >> w1.txt
+  609  git add .
+  610  git commit -m "CM2.2 from feature2"
+  611  echo "rec" >> w1.txt
+  612  git add .
+  613  git commit -m "CM2.3 from feature2"
+  614  echo "rec" >> w1.txt
+  615  git add .
+  616  git commit -m "CM2.4 from feature2"
+  617  echo "rec" >> w1.txt
+  618  git add .
+  619  git commit -m "CM2.5 from feature2"
+  620  clear
+  621  git log --oneline
+  622  git rebase -i HEAD~5
+  623  git log --oneline
+  624  ls
+  625  cat w1.txt
+  626  echo "rec1" > r1.txt
+  627  echo "rec2" > r1.txt
+  628  echo "rec3" > r1.txt
+  629  echo "rec4" > r1.txt
+  630  git add .
+  631  git commit -m " Added r1.txt"
+  632  clear
+  633  git log oneline
+  634  git log --oneline
+  635  git switch master
+  636  git log --oneline
+  637  git switch feature2
+  638  git rebase master
+  639  git log --oneline
+  640  git switch master
+  641  ls
+  642  git cherry-pick 4f33fd5
+  643  git log --oneline
+  644  ls
+  645  clear
+  646  git log --oneline
+  647  git switch -c feature-cr1
+  648  echo "rec1" >> l1.txt
+  649  git add .
+  650  clear
+  651  git status
+  652  git branch
+  653  git switch feature2
+  654  git status
+  655  git switch feature-cr1
+  656  git status
+  657  git stash
+  658  git status
+  659  git stash list
+  660  git log --oneline
+  661  echo "rec1" >> l2.txt
+  662  git add .
+  663  git status
+  664  git stash save "stashed l2.txt"
+  665  git stash list
+  666  git status
+  667  git stash show
+  668  git stash show stash@{1}
+  669  git status
+  670  echo "rec1" >> l3.txt
+  671  git add .
+  672  git stash save "stashed l3.txt"
+  673  echo "rec1" >> l4.txt
+  674  git add .
+  675  git stash save "stashed l4.txt"
+  676  git stash list
+  677  git status
+  678  git stash apply
+  679  git stash list
+  680  git commit -m "l4.txt"
+  681  git status
+  682  git stash list
+  683  git stash drop
+  684  git stash list
+  685  git stash pop
+  686  git status
+  687  c;lear
+  688  clear
+  689  git status
+  690  git stash branch cr1-temp-brnch
+  691  clera
+  692  clear
+  693  git branch
+  694  git status
+  695  cd ..
+  696  mkdir gitremotedemo1
+  697  cd gitremotedemo1/
+  698  clear
+  699  git init
+  700  echo "rec1" >> Readme.txt
+  701  echo "rec1" >> Readme.txt
+  702  echo "rec1" >> Readme.txt
+  703  echo "rec1" >> Readme.txt
+  704  git add .
+  705  git commit -m "Initial Commit from Local Repo"
+  706  ckear
+  707  clear
+  708  ls
+  709  cat Readme.txt
+  710  git remote -v
+  711  git remote add origin https://github.com/LoksaiETA/dummyremoterepo1.git
+  712  git remote -v
+  713  git push -u origin master
+  714  git remote -v
+  715  git remote add origin1 https://github.com/LoksaiETA/dummyremoterepo2.git
+  716  git remote -v
+  717  git branch
+  718  git branch -M main
+  719  git branch -M master
+  720  git push -u origin1 master
+  721  git remote -v
+  722  git remote remove origin1
+  723  git remote -v
+  724  git remote add origin1 https://github.com/LoksaiETA/dummyremoterepo2.git
+  725  git remote -v
+  726  clear
+  727  ls
+  728  echo "rec1" >> file1.txt
+  729  git add .
+  730  git commit -m "CM1 from local master"
+  731  git status
+  732  git log --oneline
+  733  clear
+  734  git remote -v
+  735  git push -u origin1
+  736  git switch -c feature1
+  737  ls
+  738  echo "rec1" >> file2.txt
+  739  git add .
+  740  git commit -m "CM1 from local feature1"
+  741  git log --oneline
+  742  git push -u origin1 feature1
+  743  git switch master
+  744  git status
+  745  git log --oneline
+  746  ls
+  747  git fetch origin1
+  748  git fetch origin1
+  749  ls
+  750  git pull origin1
+  751  ls
+  752  cd.
+  753  cd..
+  754  cd ..
+  755  mkdir gitremotedemo2
+  756  cd gitremotedemo2/
+  757  git status
+  758  git remote -v
+  759  git clone https://github.com/LoksaiETA/dummyremoterepo5.git
+  760  ls
+  761  cd de
+  762  cd dummyremoterepo5/
+  763  ls
+  764  git status
+  765  git remote -v
+  766  git fetch
+  767  git fetch
+  768  git pull
+  769  ls
+  770  git pull
+  771  history
+ 
