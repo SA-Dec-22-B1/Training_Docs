@@ -1,0 +1,50 @@
+
+#Jenkins Master Slave Configuration: 
+
+#Launch New AWS Linux Instances
+
+#Jenkins Master, Node1, Node2
+
+#Launch AWS Linux Instance with port 8080 & Name Tag
+#Update the Instance
+
+#Execute only in Master:
+
+#Jenkins Installation Steps:
+#Launch AWS Linux Instance with port 8080 & Name Tag
+#Update the Instance
+
+sudo -i
+
+yum update -y
+
+#Install Jenkins :
+
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+
+#Install epel Package:
+amazon-linux-extras install epel
+
+#Install Java: 
+amazon-linux-extras install java-openjdk11
+
+yum install jenkins 
+
+#Start Jenkins:
+
+# Start jenkins service
+#service jenkins start
+#systemctl 
+
+
+# Setup Jenkins to start at boot,
+chkconfig jenkins on
+
+systemctl enable jenkins
+systemctl start jenkins
+
+#systemctl enable tomcat
+#systemctl start tomcat
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
