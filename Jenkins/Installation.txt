@@ -1,4 +1,3 @@
-
 #Jenkins Master Slave Configuration: 
 
 #Launch New AWS Linux Instances
@@ -39,12 +38,106 @@ yum install jenkins
 
 
 # Setup Jenkins to start at boot,
-chkconfig jenkins on
+#chkconfig jenkins on
+
+systemctl status jenkins
 
 systemctl enable jenkins
 systemctl start jenkins
+
 
 #systemctl enable tomcat
 #systemctl start tomcat
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#Execute in Slave Nodes:
+
+#Install epel Package:
+amazon-linux-extras install epel
+
+#Install Java: 
+amazon-linux-extras install java-openjdk11
+
+#Install GIT:
+
+yum install git -y
+
+#Install Maven:
+
+sudo wget https://dlcdn.apache.org/maven/maven-3/3.8.7/binaries/apache-maven-3.8.7-bin.tar.gz
+sudo tar xf apache-maven-3.8.7-bin.tar.gz -C /opt
+#Create a symlink for Apache maven directory to update the maven versions
+sudo ln -s /opt/apache-maven-3.8.7 /opt/maven
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`````
+
+#Set Java Path / Environment Variables:
+
+## Check the java installed version:
+#cd /usr/lib/jvm/
+
+#eg: /usr/lib/jvm/java-11-openjdk-11.0.13.0.8-1.amzn2.0.3.x86_64
+
+#open .bash_profile & add the following lines:
+
+#java-11-openjdk-11.0.16.0.8-1.amzn2.0.1.x86_64 
+
+
+export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-11.0.16.0.8-1.amzn2.0.1.x86_64"
+export MAVEN_HOME=/opt/apache-maven-3.8.7
+export M2=/opt/apache-maven-3.8.7/bin
+PATH=$PATH:$HOME/bin:$JAVA_HOME/bin:$MAVEN_HOME:$M2
+
+source ~/.bash_profile
+source ~/.bashrc
+
+#open .bashrc & add the following lines:
+#export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-11.0.13.0.8-1.amzn2.0.3.x86_64"
+#export MAVEN_HOME=/opt/apache-maven-3.8.7
+#export M2=/opt/apache-maven-3.8.7/bin
+#PATH=$PATH:$HOME/bin:$JAVA_HOME/bin:$MAVEN_HOME:$M2
+
+#source ~/.bash_profile
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#********************************************************************************************
+#********************************************************************************************
+#********************************************************************************************
+
+#********************************************************************************************
+#********************************************************************************************
+#********************************************************************************************
+
+#Add User : 
+
+useradd -m -d /home/devopsadmin devopsadmin
+
+su - devopsadmin
+
+ssh-keygen
+
+ls ~/.ssh 
+
+#You should see following two files:
+
+#id_rsa - private key
+#id_rsa.pub - public
+
+#cat id_rsa & copy the private key and paste it into jenkins node config. enter private key directly field.  Then,
+cat id_rsa.pub > authorized_keys
+
+chown -R devopsadmin /home/devopsadmin/.ssh
+chmod 600 /home/devopsadmin/.ssh/authorized_keys
+chmod 700 /home/devopsadmin/.ssh
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Login to Jenkins thru browser, Go to Manage Jenkins --> Config Nodes -- > Add New Node 
+
+Config the Node Name, Label, Access thru SSH Parm - user Name, with private key
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~``
+
+Goto Global Tools config. Settings and ADD Maven Installation Details.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
