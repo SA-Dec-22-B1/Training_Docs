@@ -1,0 +1,32 @@
+new project -- maven --
+
+
+Create New Maven Project 
+
+Create Simple project with out archetype
+
+give groupID and artifact ID -- Finish
+
+Goto Help Menu --> Marketplace --> search for TestNG and install 
+
+goto maven repo --> Search for TestNG, Selenium Dependencies
+
+download the chrome driver with the version as same as your current chrome version.
+Unzip and chrome_driver_win32 and copy the chrome_driver.exe file to the project folder. 
+
+update the pom.xml
+
+remove default packages from main/java & test/java
+
+create new package in test/java
+
+create new class with main function 
+
+Ensure following packages are imported.
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+import org.testng.Assert;
