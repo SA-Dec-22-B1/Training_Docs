@@ -1,0 +1,161 @@
+#Install & configure Tomcat server :
+
+#Check out Official WebPage:
+#https://tomcat.apache.org/
+
+#Launch AWS EC2 Linux Instance:  8080 
+
+sudo -i 
+
+yum update -y 
+
+#Install JDK
+#Install epel Package:
+amazon-linux-extras install epel
+
+#Install Java: 
+amazon-linux-extras install java-openjdk11
+
+#Set Java Path / Environment Variables:
+#open .bashrc & add the following lines:
+
+#java-11-openjdk-11.0.16.0.8-1.amzn2.0.1.x86_64
+
+export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-11.0.16.0.8-1.amzn2.0.1.x86_64"
+PATH=$PATH:$HOME/bin:$JAVA_HOME/bin
+
+#Save the file
+#open .bash_profile & add the following lines:
+export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-11.0.13.0.8-1.amzn2.0.3.x86_64"
+PATH=$PATH:$HOME/bin:$JAVA_HOME/bin
+
+#Save the file
+
+source ~/.bash_profile
+
+****************************************************************************************************
+
+#Install tomcat in Amazon Linux Instance:
+
+#https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.85/bin/apache-tomcat-8.5.85.tar.gz
+
+
+cd /opt
+wget https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.85/bin/apache-tomcat-8.5.85.tar.gz
+tar -xvzf /opt/apache-tomcat-8.5.85.tar.gz
+
+mv apache-tomcat-8.5.85 tomcat
+
+#Start Tomcat Server:
+#Goto:
+
+cd /opt/tomcat/bin
+./startup.sh
+
+****************************************************************************************************
+
+#Add-USer for Tomcat :
+
+useradd -m -d /home/devopsadmin devopsadmin
+
+su - devopsadmin
+
+ssh-keygen
+
+ls ~/.ssh 
+
+#You should see following two files:
+
+#id_rsa - private key
+#id_rsa.pub - public
+
+cd /home/devopsadmin/.ssh
+
+cat id_rsa.pub > authorized_keys
+
+chown -R devopsadmin /home/devopsadmin/.ssh
+chmod 600 /home/devopsadmin/.ssh/authorized_keys
+chmod 700 /home/devopsadmin/.ssh
+
+#make devopsadmin user as a owner to tomcat dir :
+
+chown -R devopsadmin /opt/tomcat
+
+/home/devopsadmin
+
+****************************************************************************************************
+
+# Configure Jenkins :
+
+#Go to Jenkins Master thru Browser.
+
+#Install Publish over ssh plugin
+
+#Goto Manage Jenkins - Configure System - Configure Publish over ssh Plugin
+
+#Create Jenkins freestyle Job to Test the Deployment as discussed
+
+/opt/tomcat/webapps/target/mvn-hello-world.war
+
+**************************************************************************************
+
+#Github webhook to automatically trigger build pipeline!
+
+#Goto Github Repository setting, 
+Select webhook, 
+
+Click Add Webhook
+
+Enter Jenkins Master URL. eg.:
+http://<public-IP>:8080/github-webhook/
+
+http://35.154.44.76:8080/github-webhook/
+
+Choose the push event and save the webhook configuration
+
+**********************************************************************************
+
+Build Periodic:
+want to trigger a build for every one hour only
+
+
+Intall GIT on your Jenkins Master!
+
+	Poll SCM:
+	want to trigger a build for every one hour only if there is any commit happened in the src repo 
+
+	Github Webhook!!
+	want to trigger a build for every commit happened in the src repo 
+
+DEV envi.
+
+	Dev1 == commit to his src code repo --->>
+	to perform some unit testing 
+	
+	His test cycle runs every 6 hrs.
+	
+		- Code promotion to QA 
+		
+	poll SCM !
+	
+		Done with QA Testing src code has been updated the the required commit 
+		
+	GITHUB Webhook !
+	
+	
+Email Notification Plugins :::
+
+SMTP Server :
+smtp.gmail.com
+
+SMTP Authentication
+
+SMTP Port :: 465
+
+Login to Gmail :::
+
+Click Account Settings
+
+Security 
+
+Create gmail App Token --- 16 
