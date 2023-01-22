@@ -1,0 +1,196 @@
+#Docker Installation | Configuration | Commands & Concepts:
+
+sudo yum install docker
+
+
+yum install docker -y
+docker version
+systemctl status docker
+systemctl start docker
+systemctl status docker
+systemctl enable docker
+
+
+
+#Basic Docker Commands :
+
+#goto : https://hub.docker.com/
+
+#Test Docker with basic hello-world image from docker hub.
+
+docker run centos
+docker pull centos 
+
+
+
+docker run -it nginx
+docker exec -it <container_id>
+
+docker pull hello-world
+
+docker images
+
+docker run centos
+
+docker ps
+docker ps -a
+
+### Run Container in Interactive Mode:
+###docker run -it --name=testvol1 centos bash
+docker run -it centos bash
+
+cat /etc/*release*
+
+### Print the Docker Centos Image Release Info.
+dockerpath# cat /etc/*release*
+dockerpath# exit
+
+###Run Docker Container in DETACHED MODE :
+docker run -d centos sleep 20 
+docker ps -a
+
+###Run Docker Container in FOREGROUND MODE :
+docker run centos sleep 20
+docker ps -a
+
+docker run -d centos sleep 200
+docker stop <container_id>
+
+docker rm 2c5b 1b4f
+
+docker images
+docker rmi <image_id>
+
+### Before deleting image, ensure that it is not referenced to any container. 
+### In it is mapped, delete the container first, then can re container image.
+
+docker rmi -f hello-world
+
+docker pull centos:centos7.9.2009
+
+docker run centos sleep 1100
+
+docker stop <container_id>
+
+### Detached Mode
+docker run -d centos sleep 2000
+
+docker attach <running_container_id>
+docker stop <container_id>
+
+###docker pull timer
+
+#docker pull jenkins
+
+#docker run jenkins
+
+docker inspect <container_id>
+
+docker history <imagename>
+
+
+### Port-Mapping / Port-Binding
+
+goto hub.docker & search for tomcat
+
+docker run -it -p 8088:8080 tomcat:8.0
+
+#### -p host_port:container_port
+
+Once you install tomcat on ur vm :
+
+<public_ip>:8088
+
+
+###Docker Logs
+
+docker logs <container_id>
+
+#Access Docker contents using exec - Non-Interactive Mode: 
+
+docker exec e8553a4721d5 cat /etc/hosts
+
+#Login to Docker Container using exec in Interactive Mode: (Using Container Name) 
+
+docker exec -it <container_name-gallant_blackburn> bash
+
+#Run Docker Image in Interactive Mode: (Using Image Name) 
+
+docker run -it centos bash
+dockerpath# cat /etc/*release*
+dockerpath# exit
+
+### Get the running Container Names
+docker ps -q
+
+###Stop all Running Containers:
+
+docker stop $(docker ps -q)
+
+docker kill $(docker ps -aq)
+
+
+
+
+
+
+###Build Docker Image :::
+
+Dockerfile 
+
+###Using commit: 
+
+	docker run -it debian
+
+	ls
+
+	git
+
+	apt-get update && apt-get install -y git 
+
+	clear
+
+	git 
+
+	docker ps -a 
+
+	docker commit <container_id> loksaieta/deb-git:v1.0
+
+	docker images
+
+	docker run -it loksaieta/debian-git:s1.1
+	
+	###Login to Container:
+	docker exec -it <container_name-wizardly_shannon> bash
+	
+###Using Docker file:
+
+mkdir docker-contents
+cd docker-contents
+
+vi Dockerfile
+
+FROM debian
+RUN apt-get update
+RUN apt-get install -y git
+RUN apt-get install -y vim
+
+
+
+
+### Best Practice:
+
+FROM debian
+RUN apt-get update && apt-get install -y \
+	git \
+	vim
+
+###
+
+###save this Dockerfile
+
+docker build -t loksaieta/debiangitvim .
+
+docker images
+
+
