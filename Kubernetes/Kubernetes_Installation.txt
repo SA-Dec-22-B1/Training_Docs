@@ -1,0 +1,90 @@
+#Kube-Master(Controller)  - VM 
+#	Kube-Worker1
+#	Kube-Worker2
+
+#https://kubernetes.io/docs/setup/
+	
+#Add Port: 0 - 65535
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+###On Both Master and Worker Nodes:
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+sudo -i
+
+yum update -y
+
+swapoff -a
+#The Kubernetes scheduler determines the best available node on which to deploy newly created pods. If memory swapping is allowed to occur on a host system, this can lead to performance and stability issues within Kubernetes.
+
+setenforce 0
+#Disabling the SElinux makes all containers can easily access host filesystem.
+
+yum install docker -y
+
+systemctl enable docker 
+systemctl start docker
+
+cat <<EOF > /etc/yum.repos.d/kubernetes.repo
+[kubernetes]
+name=Kubernetes
+baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+enabled=1
+gpgcheck=1
+repo_gpgcheck=0
+gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+exclude=kube*
+EOF
+
+
+cat <<EOF >  /etc/sysctl.d/k8s.conf
+net.bridge.bridge-nf-call-ip6tables = 1
+net.bridge.bridge-nf-call-iptables = 1
+EOF
+
+sysctl --system
+
+yum install -y kubeadm-1.21.3 kubelet-1.21.3 kubectl-1.21.3 --disableexcludes=kubernetes 
+
+systemctl enable kubelet 
+systemctl start kubelet
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#Only on Master Node:
+#~~~~~~~~~~~~~~~~~~~~~
+
+sudo kubeadm init --apiserver-advertise-address=172.31.45.158 --pod-network-cidr=192.168.0.0/16 --ignore-preflight-errors=NumCPU --ignore-preflight-errors=Mem
+
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+
+#export KUBECONFIG=/etc/kubernetes/kubelet.conf
+
+  
+  
+#We need to install a flannel network plugin to run coredns to start pod network communication.
+
+sudo kubectl apply -f https://docs.projectcalico.org/v3.3/getting-started/kubernetes/installation/hosted/rbac-kdd.yaml 
+sudo kubectl apply -f https://docs.projectcalico.org/v3.8/getting-started/kubernetes/installation/hosted/kubernetes-datastore/calico-networking/1.7/calico.yaml 
+
+#Test the configuration ::
+
+kubectl get pods --all-namespaces
+
+#Generate NEW Token :
+kubeadm token create --print-join-command
+
+kubectl get nodes
+
+kubectl describe nodes
+
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#Execute the below commmand in Worker Nodes, to join all the worker nodes with Master :
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+kubeadm join 172.31.45.158:6443 --token 942ikd.qwhww76se2aq3wlg --discovery-token-ca-cert-hash sha256:c8096f4e1a2a5f3d9d95e6eed3bac413336dcead1512e90c688d6e4e3d153193
+
+#kubeadm join 172.31.45.158:6443 --token 7mg2jr.qygy3fc8prlkegm1 --discovery-token-ca-cert-hash sha256:c8096f4e1a2a5f3d9d95e6eed3bac413336dcead1512e90c688d6e4e3d153193
