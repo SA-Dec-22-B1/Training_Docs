@@ -1,5 +1,5 @@
 *******************************************************************
-# 1. https://labs.play-with-k8s.com/
+# 1.
 
 # nginx-pod.yaml
 apiVersion: v1
@@ -69,4 +69,3 @@ kubectl delete pod nginx-pod
 
 
 *******************************************************************
-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
