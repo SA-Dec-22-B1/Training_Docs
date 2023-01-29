@@ -1,4 +1,3 @@
-https://mail.google.com/mail/u/0/#inbox/FMfcgzGrbRcGqxFzVxjQjMnRQTqSsGjr
 
 1. Timings --> 11 - 3pm s/s 
 
@@ -4779,3 +4778,240 @@ DAY-16
 			Docker Compose
 			
 			Kubernetes!
+@@@@@@@@
+DAY-17
+@@@@@@@@
+
+		Dockerfile 
+		Docker Volumes
+		Docker Compose!
+
+		Dockerfile to create application Image & Deploy thru tomcat container .
+		
+		Docker Volumes ???
+		
+		Volume ???
+		
+			Storage blocks/units.
+		
+		dir1/file1.txt
+		
+		cloud / on-prem ===> 
+		s3 buckets
+		SSD
+		HDD
+		Cluster volume
+		Gluster Volume
+		Drive 
+		
+		
+		Application!
+		
+			deployed using Container! / without container ?
+		
+		Stateless Application
+			
+		
+		Statefull Application
+		
+			logs, reports. -- volume 
+			
+			
+		Containers were introduced only for stateless applications!		
+		
+			it is used to run only the task.!
+			
+		Micro-service Architecture ---> 
+		
+			Developers are creating Statefull Applications.
+			
+			
+		Micro-service1 (User-Login_Screen)			Micro-service2 (Application Landing Page)
+		container1	username,password 				container2 (username)
+			(Container1 Volume)       <-------------->	(Container2 Volume)
+										(Host-Volume)
+									(/opt/dir1/username.json)
+									
+									Volume Mapping/Binding
+									
+		Docker Container Volumes :::
+			docker volume
+		
+		Micro-service1
+		container1
+		Need some configs -- are stored in a host vol.
+		
+		
+		
+		
+		Docker Compose!!!!!
+		
+		
+		Micro-service1				---> 	Feedback-form web page.
+												User-Interface (HTML)
+												Application Server (tomcat)
+												Database(MYSQL)
+												
+		
+		Container1
+			Tomcat
+			MYSQL 
+			
+		docker-compose !
+		
+		Docker Engine 
+		
+		
+		Install Docker Compose!
+			configure Docker Compose
+		Working on Docker Compose Commands.
+		Config file/manifest file / docker-compose file ===> *.yaml
+		
+		
+
+#docker-compose.yaml 		
+		
+version: "3.9"
+services:						===> Container.
+  web:
+    build: .					===> build docker image and run it using Dockerfile 
+    ports:
+      - "8080:8080"
+  gitimage:
+    image: "loksaieta/debiangitvim"
+
+
+
+#docker-compose.yaml 		
+		
+version: "3.9"
+services:
+  service1:
+	image: "loksaieta/appservice1"
+	image: "loksaieta/appservice2"
+	image: "loksaieta/appservice3"
+	image: "loksaieta/appservice4"
+	image: "loksaieta/appservice5"
+	image: "loksaieta/appservice6....1000"
+	
+#docker-compose.yaml 		
+		
+version: "3.9"
+services:
+  service1:
+	image: "loksaieta/appservice1"
+	image: "mysql:latest"
+		
+yaml file ===> key-value pairs 	
+		
+		
+	We need Container Orchestration Tool to Manage and Orchestrate the Containers 
+	
+		Ensure High availability of the containers!!!
+		
+			Docker Swarm! is one of the Container Orchestration tools that is meant only for Docker Containers
+
+
+	Docker Workflow :::
+	
+		build the application
+		Create the artifacts
+		Create Dockerfile with the artifact and build image .
+		
+			--> This image is present in Build Server.
+			
+			Deploy to to higher envi. like QA 
+		
+		Deployment ::: 
+		
+			Docker Registry ::: DockerHub 
+		
+	
+	Kubernetes ==> Is one of the Container Orchestration tools. It is open source.
+	
+	
+	Micro-service Based Application Architecture ::: 
+	
+		All the services here are containerized.!!!!
+		
+		DEV -- Build -- QA -- UAT -- PROD -- Use application Image 
+		
+	Why we Need Kubernetes ??
+		- Managing Workload & Services 
+		- High Availability of Containers 
+		- Orchestrate Containers 
+	
+	SDLC -- 
+	
+	Deployed a service in PROD Environment :::
+	
+		Application Should be up and running 24/7.
+		
+		How to ensure high availability of application ???   1000 n 1000 of containers
+		
+			What could be the possible reasons that can impact High - Availability of Application?
+				
+				- Container should be ALIVE !				volume! 100GB <---> copied to host volume
+					i.e., it should NOT go into Exit State.
+				- Host Machines should be ALIVE ! 5 + 5 more
+				- When Host machine is running out of memory!
+				- Network 
+				- Powersupply
+				- Communication
+			
+			Backup! / Replicas ===> Active & Passive   5 copies of containers shd be up n running all the time. 
+			
+			Website is running as expected! ==> 5000 concurrent endusers. 
+					all of sudden there is in traffic . i.e., 5000 increased to 10000.
+					
+			Auto-Scaling / Load Balancing 
+				Scale-up / down 
+			
+				
+				
+				Application build ?
+				
+		
+		
+		Kubernetes ::::
+		
+			Kubernetes Architecture
+			Installation of Kubernetes
+			Kubernetes Terminologies 
+				Cluster
+				Pod
+				Services
+				Controllers
+			How to Deploy application on Kubernetes 				
+	
+				
+				
+		Kubernetes Cluster :::
+			
+		K8s Master :		
+			Kubernetes-Cluster :
+				Worker_Node1
+				Worker_Node2
+				Worker_Node3
+				
+			Pod / ContainerS
+			
+		
+			
+		Installation !!!
+		
+			playwithkubernetes	
+			
+			Minikube! 
+				-->
+			kubeadm! ---> used to install and configure Kubernetes Master & Cluster
+	
+	Next :::		
+				Using KubeAdm - Install & Config K8s Master & cluster.
+				Using Kubectl - CLI to interact with K8s Master & Cluster.
+			
+		
+	Summary :
+		Docker Volume
+		Docker Compose 
+		
