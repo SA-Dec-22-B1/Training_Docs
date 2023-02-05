@@ -31,6 +31,16 @@ ansible all -m ping ### will ping all hosts from /etc/ansible/hosts file
 ansible samplenode1 -m ping
 ansible samplenode2 -m ping
 
+#or using user defined Inventory file
+#ansible ansible-node1 -m ping -i myinventoryfile.txt
+
+#**************************************************************************************************************************
+
+ansible samplenode2 -m ping
+ANSIBLE_KEEP_REMOTE_FILES=1 ansible samplenode1 -m shell -a "sleep 5 ; echo 'hi'"
+
+ANSIBLE_KEEP_REMOTE_FILES=1 ansible samplenode1 -m shell -a "uptime"
+
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Ansible Facts!
 
@@ -49,6 +59,8 @@ ansible samplenode1 -m copy -a "src=/home/devopsadmin/test1.txt dest=/home/ansib
 
 ###idempotent
 
+ansible testnodes -m copy -a "src=/etc/ansible/s1.txt dest=/home/ansibleadmin"
+
 ansible testnodes -m copy -a "content='hello from Ansible Controller\n' dest=/dest/path/hello.txt"
 
 ansible testnodes -m copy -a "content='hello from Ansible Controller\n' dest=/dest/path/hello.txt backup=yes"
@@ -61,3 +73,371 @@ ansible samplenode1 -m fetch -a "src=/home/ansibleadmin/node1file.txt dest=/home
 
 UseCase 1 :
 	- Deploy an artifact *.war from Jenkins Slave Machine to QA-Server.
+
+#Adhoc Commands with various Modules
+#How Ansible Works?
+#Ansible Facts & Variables
+
+#######Adhoc Commands with various Modules
+
+###Test Connection:
+ansible testnodes -m ping
+
+### Test Uptime of Nodes:
+ansible testnodes -m shell -a "uptime"
+
+### Pass Multiple Groups:
+ansible testnodes1:testnodes2 -m shell -a "uptime"
+
+### Check RAM Utilization:
+ansible testnodes -m shell -a "free -m"
+
+###Pass Different Inventory File:
+ansible -i inventory_file_name prodnodes -m shell -a "uptime"
+
+
+### List all modules:
+ansible-doc -l
+### No. of modules:
+ansible-doc -l | wc -l
+### Search for specific modules:
+ansible-doc -l | grep shel
+### To know about any specific modules:
+ansible-doc shell
+
+
+#**************************************************************************************************************************
+#Ansible Variables !
+#shell : echo $var1 
+
+#debugmod.yaml
+
+---
+ - hosts: samplenode1
+   tasks:
+   - debug:  
+      msg:
+       - "The os distribution is: {{ansible_distribution}}" 
+       - "THe os name is: {{ansible_system}}"
+       - "The os family is: {{ansible_os_family}}"
+       - "THe mount points are :{{ansible_mounts}}"
+       
+# How to jus verify playbook syntax:
+#ansible-playbook testfile.yaml --syntax-check
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#~~~~~~~~~~~~~~~~~~~~~~~~~ test_var-datatype.yaml
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#test_var-datatype.yaml
+---
+ - hosts: samplenode1
+   vars:
+    x: 23
+    my_num: 45.67
+    my_name: Loksai
+    my_b: YES   
+   tasks:
+   - debug:
+      msg:
+       - "The value of x is: {{x}} and type: {{x|type_debug}}"
+       - "THe value of my_num: {{my_num}} and type : {{my_num|type_debug}}"
+       - "The value of my_name : {{my_name}} and type: {{my_name|type_debug}}"
+       - "THe value of my_b is: {{my_b}} and type : {{my_b|type_debug}}"
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#/etc/ansible/variables/varfile_datatype1.yaml
+    x: 23
+    my_num: 45.67
+    my_name: Loksai_ETA
+    my_b: YES
+
+#test_var-datatype1.yaml
+---
+ - hosts: samplenode1
+   vars_files:
+     - /etc/ansible/variables/varfile_datatype1.yaml
+   tasks:
+   - debug:
+      msg:
+       - "The value of x is: {{x}} and type: {{x|type_debug}}"
+       - "THe value of my_num: {{my_num}} and type : {{my_num|type_debug}}"
+       - "The value of my_name : {{my_name}} and type: {{my_name|type_debug}}"
+       - "THe value of my_b is: {{my_b}} and type : {{my_b|type_debug}}"
+
+ansible-playbook test_var-datatype1.yaml
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#ansible-playbook var_datatype1.yaml -e "x = 100 my_num = 50.50 my_name = Loksai_ETA my_b = NO"
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	   
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#test_varfile1.yaml
+---
+ - hosts: "{{ host_name }}"
+   become: yes
+   tasks:
+   - name: Install "{{ tool_name }}" service
+     yum:
+       name: "{{ tool_name }}"
+       state: "{{ tool_state }}"
+
+---
+ - hosts: samplenode1
+   become: yes
+   tasks:
+   - name: Install git service
+     yum:
+       name: git
+       state: present
+
+---
+ - hosts: samplenode1
+   tasks:
+   - name: Install git service
+     yum:
+       name: git
+       state: present
+
+install
+
+
+yum install git 2.50v 
+
+
+ansible-playbook testvarfile1.yaml -e "host_name=samplenode1 tool_name=git tool_state=present"
+
+##state ==> present | absent | latest 
+
+nginx service == start | stop | restart 
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+##cat varfile1.yaml
+
+host_name = samplenode1
+tool_name = httpd
+tool_state = present
+
+---
+ - hosts: "{{ host_name }}"
+   become: yes
+   tasks:
+   - name: Install "{{ tool_name }}" service
+     yum:
+       name: "{{ tool_name }}"
+       state: "{{ tool_state }}"
+
+
+ansible-playbook demopgkmgr.yaml -e "host_name=samplenode1 tool_name=git tool_state=present"
+
+ansible-playbook testvarfile1.yaml -e "@/etc/ansible/variables/varfile1.yaml"
+
+
+
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#~~~~~~~~~~~~~~~~~~~~~~~~~ register and set-facts
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#test_var-datatype.yaml
+---
+ - hosts: testnodes
+   gather_facts: false
+   tasks:
+   - shell: "bash --version"
+
+#test_var-datatype.yaml
+---
+ - hosts: samplenode1
+   tasks:
+   - shell: "bash --version"
+     register: bash_ver
+   - debug: var=bash_ver
+      
+#register_set_facts.yaml
+---
+ - hosts: samplenode1
+   tasks:
+   - shell: "bash --version"
+     register: bash_ver
+   - set_fact:
+      bash_version: "{{bash_ver.stdout.split('\n')[0].split()[3]}}"
+      my_value: "bash version"
+   - debug: var=bash_version
+   
+   
+Become :
+
+---
+  - hosts: samplenode1
+    gather_facts: false
+    #become: yes
+    tasks:
+      - name: Install httpd
+        yum:
+          name: httpd
+          state: latest 
+
+## state ::::  present | absent | latest 
+
+---
+  - name: Install NGINX 
+    hosts: debian_hosts
+    tasks:
+      - name: Install NGINX on Debian 
+        apt:
+          name: nginx 
+          state: present
+		  
+---
+  - name: Install NGINX 
+    hosts: debian_hosts
+    tasks:
+      - name: Install NGINX on Redhat 
+        yum:
+          name: nginx 
+          state: present
+
+Handlers :::
+---
+  - hosts: samplenode1
+    become: yes
+    tasks:
+      - name: Install httpd
+        yum:
+          name: httpd
+          state: present
+      - name: start httpd
+        service:
+          name: httpd
+          state: started
+		  
+service Module: state:=  started | stopped | restarted 
+
+yum Module: 
+
+state:=  present | absent | laatest 
+state ::: started | stopped | restart
+
+---
+  - hosts: samplenode1
+    #gather_facts: false
+    become: yes
+    tasks:
+      - name: Install httpd
+        yum:
+          name: httpd
+          state: present
+    notify:
+      - start httpd2
+    handlers:
+    - name: start httpd2
+      service:
+          name: httpd
+          state: started
+		  
+#Eg.: Labels & Selectors :::  
+
+---
+  - hosts: samplenode1
+    #gather_facts: false
+    become: yes
+    tasks:
+      - name: Install httpd
+        yum:
+          name: httpd
+          state: present
+	  - name: start httpd2
+        service:
+          name: httpd
+          state: started
+
+
+Organize the Ansible Components ::::
+
+	playbooks
+	inventories
+	handlers
+	variables 
+	tasks 
+	
+
+
+
+
+
+
+
+
+
+
+
+Loops :
+
+---
+  - hosts: samplenode1
+    become: yes
+    tasks:
+      - yum:
+         name: git
+         state: present
+      - yum:
+         name: httpd
+         state: present
+      - yum:
+         name: vim
+         state: present
+
+---
+  - hosts: samplenode1
+    gather_facts: false
+    become: yes
+    tasks:
+      - yum:
+         name: "{{item}}"
+         state: absent
+        loop:
+          - git
+          - httpd
+          - vim
+   
+#~~~~~~~~~~~~~~~~~~~~~~~~~
+Ansible Roles :::
+
+
+
+
+
+
+Intranet: Repositories for Managing the Playbooks 
+Ansible Playbooks --- > Repository
+Internet : Access the playbooks 
+
+Ansible-galaxy 
+
+Roles! are the packages of Ansible components / Templates
+
+Ansible Roles :::
+
+servers ;;;
+
+reuse!!!
+
+VS Code ::::
+playbooks === commit it to repo. (github) (az repo)
+
+source code repo. for dev team
+
+repo for devops team 
+
+
+Ansible Contoller is in diff server 
+
+pull the playbook from repo.
+exec the playbooks/scripts:::
+
+
+Ansible Components ::::
+
+roles ===>
+
+collection of tasks, handlers, vars or any ansible components you need to run the playbooks 
