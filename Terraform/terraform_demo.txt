@@ -1,0 +1,187 @@
+provider "aws" {
+  region     = "ap-south-1"
+  access_key = "sdvsKdsvdvsdvsdvsdvIA3sdvsdvsdvsdvsdvsdvsdvsdvsdvsdvsdvs6sdsdvsdv65QZHN4NCSNZET"
+  secret_key = "OB3W72XIAQdsdvsdvsdvsdvXZz/4IFlq/Ko4FGWr5O0sdvsdvsdvsdvsdv80P7mJ8eiv"
+}
+
+# Create AWS Instance
+
+resource "aws_instance" "sa_tf_server1" {
+  ami           = "ami-01a4f99c4ac11b03c"
+  instance_type = "t2.micro"
+  key_name      = "loksai-clouduser"
+
+  tags = {
+    Name = "TerraformDemoServer1"
+  }
+}
+
+
+
+
+# Create AWS Instance
+
+resource "aws_instanceeee" "app_server2" {
+  ami           = "ami-074dc0a6f6c764218"
+  instance_type = "t2.micro"
+  key_name      = "kubeserverkey"
+
+  tags = {
+    Name = "TerraformDemoServer2"
+  }
+}
+
+
+
++ => Add new resource
+~ => update any existing resource
+- => Delete any existing resource
+
+
+
+
+
+
+
+terraform init
+
+terraform plan
+
+terraform apply
+
+terraform destroy
+
+terraform state list
+
+
+
+
+
+*****************************************************************************************
+
+
+
+
+Install Terraform --> Local Windows Machine!!!
+
+Use Command prompt to run Terraform commands like : terraform init, terraform plan, terraform apply, etc..
+
+Create the Config file ?
+
+Visual Studio Code  to create or develop Terraform Config files! i.e., *.tf files 
+
+
+provider "aws" {
+  region     = "ap-south-1"
+  access_key = "sdvsdvsdvsdvsdvsdvsdvsdvsdvsddv"
+  secret_key = "sdv91a3sdfewrwefsdP9/Fe1JWsdsdswe"
+}
+
+# Create VPC
+
+resource "aws_vpc" "myvpc1" {
+  cidr_block       = "10.0.0.0/16"
+  instance_tenancy = "default"
+
+  tags = {
+    Name = "myvpc1"
+  }
+}
+
+# Create Subnet 
+
+resource "aws_subnet" "mysubnet1" {
+  vpc_id     = aws_vpc.myvpc1.id
+  cidr_block = "10.0.1.0/24"
+
+  tags = {
+    Name = "mysubnet1"
+  }
+}
+
+# Internet Gateway
+
+resource "aws_internet_gateway" "mygw1" {
+  vpc_id = aws_vpc.myvpc1.id
+
+  tags = {
+    Name = "mygw1"
+  }
+}
+
+# Route Table
+
+resource "aws_route_table" "myrt1" {
+  vpc_id = aws_vpc.myvpc1.id
+
+  route {
+    cidr_block = "0.0.0.0/0"
+    gateway_id = aws_internet_gateway.mygw1.id
+  }
+
+  tags = {
+    Name = "myrt1"
+  }
+}
+
+# Route Table Association
+
+resource "aws_route_table_association" "myrta1" {
+  subnet_id      = aws_subnet.mysubnet1.id
+  route_table_id = aws_route_table.myrt1.id
+}
+
+# Security Groups
+
+resource "aws_security_group" "mysg1" {
+  name        = "mysg1"
+  description = "Allow inbound traffic"
+  vpc_id      = aws_vpc.myvpc1.id
+
+  ingress {
+    description      = "HTTP"
+    from_port        = 80
+    to_port          = 80
+    protocol         = "tcp"
+    cidr_blocks      = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    description      = "SSH"
+    from_port        = 22
+    to_port          = 22
+    protocol         = "tcp"
+    cidr_blocks      = ["0.0.0.0/0"]
+  }
+
+  egress {
+    from_port        = 0
+    to_port          = 0
+    protocol         = "-1"
+    cidr_blocks      = ["0.0.0.0/0"]
+    ipv6_cidr_blocks = ["::/0"]
+  }
+
+  tags = {
+    Name = "mysg1"
+  }
+}
+
+# Create Instance
+
+resource "aws_instance" "App_server1" {
+  ami           = "ami-074dc0a6f6c764218"
+  instance_type = "t2.micro"
+  associate_public_ip_address = true
+  subnet_id = aws_subnet.mysubnet1.id
+  vpc_security_group_ids = [aws_security_group.mysg1.id]
+  key_name = "Loksai-aws-key"
+
+  tags = {
+    Name = "Terraform-Server"
+  }
+}
+
+
+
+
