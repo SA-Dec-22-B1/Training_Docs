@@ -7,61 +7,6 @@ Design Document::
 			5. Exception Handling
 					Document all the errors and issues you face in this whole process.
 
-1. No. of Ec2 Instances => 4
-
-1.Jenkins for CI/CD 
-2.Docker (Slave)
-3.Kubernetes (Master)
-4.Kubernetes (Slave)
-
-2. Resource Details
-CPU
-Servers
-
-
-
-
-3.Tools
-Terraform (Creation for Instances)
-Java 
-Maven
-Git
-Kubernetes
-Docker(Linux)
-Jenkins (Web Hook Plugin,JUnit,)
-Prometheus (For automated Monitoring)
-Grafana (For automated visualizaation)
-Sonar Cube (Continuos Integration)
-
-4.Notifications
-Email Extension Plugin
-
-5. Exception Handling
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. No. of Ec2 Instances => 4
 
 1.Jenkins (Master):JDK,Jenkins,Email Extenson Plugin,ssh publisher,webhook
 2.Jenkins (Slave):jdk,Maven,Docker,Git
@@ -92,7 +37,7 @@ Email Extension Plugin
 
 
 5. Exception Handling
-
+ Document all the errors and issues you face in this whole process.
 
 Infra Team :: Infra Provisioning! -- 
 
@@ -135,3 +80,18 @@ Release Mgmt Team
 Production_Monitoring Team
 
 	To monitor the devops servers
+
+
+Project Specific :::
+
+Launch these 6 EC2 Instances : Amaznon Linux 2
+	jenkins_Master,Jenkins_Slave,KuberMaster,KubernetesWN1&2 				Monitoring_server
+	
+Create pipeline ::: test this pipeline with java_mvn_app project.
+
+Implement the same with any project 
+
+
+
+
+
