@@ -87,11 +87,38 @@ Project Specific :::
 Launch these 6 EC2 Instances : Amaznon Linux 2
 	jenkins_Master,Jenkins_Slave,KuberMaster,KubernetesWN1&2 				Monitoring_server
 	
-Create pipeline ::: test this pipeline with java_mvn_app project.
+	1. Create pipeline ::: test this pipeline with java_mvn_app project.
 
 Implement the same with any project 
 
 
+Phase I :
+
+	Launch these 6 EC2 Instances : Amaznon Linux 2
+		jenkins_Master,Jenkins_Slave,KuberMaster,Kubernetes-WN1&2,Monitoring_server
+			username(devopsadmin),portnumber,ssh_keys,
+Phase II :
+
+	Install & Config required tools in all these servers 
+
+Phase III :
+
+	Create CI/CD Pipeline : End-to-End Pipeline 
+	
+		stage1 - scm-checkout 
+		stage2 - build 
+		stage3 - build docker image
+		stage4 - publish to dockerhub
+		stage5 - deploy to kubernetes
+		
+Phase IV :
+	Monitor the servers using Monitoring Tools
+	
+	
+	
+	
+
+	
 
 
 
