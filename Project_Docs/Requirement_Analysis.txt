@@ -1,0 +1,137 @@
+Design Document::
+		Workflow Diagram :::
+			1. No. of Ec2 Instances => 3
+			2. Resource Details
+			3. Tools
+			4. Notifications 
+			5. Exception Handling
+					Document all the errors and issues you face in this whole process.
+
+1. No. of Ec2 Instances => 4
+
+1.Jenkins for CI/CD 
+2.Docker (Slave)
+3.Kubernetes (Master)
+4.Kubernetes (Slave)
+
+2. Resource Details
+CPU
+Servers
+
+
+
+
+3.Tools
+Terraform (Creation for Instances)
+Java 
+Maven
+Git
+Kubernetes
+Docker(Linux)
+Jenkins (Web Hook Plugin,JUnit,)
+Prometheus (For automated Monitoring)
+Grafana (For automated visualizaation)
+Sonar Cube (Continuos Integration)
+
+4.Notifications
+Email Extension Plugin
+
+5. Exception Handling
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. No. of Ec2 Instances => 4
+
+1.Jenkins (Master):JDK,Jenkins,Email Extenson Plugin,ssh publisher,webhook
+2.Jenkins (Slave):jdk,Maven,Docker,Git
+3.QA Server 
+
+(Kubernetes Master) : K8s Master, Prometheus,Grafana,Teraform
+4.Kubernetes (Worker Node1,2): K8s,
+
+2. Resource Details
+AWS Instances
+
+
+3.Tools
+Terraform (Creation for Instances)
+Jdk
+Maven
+Git
+Kubernetes
+Docker(Linux)
+Jenkins (Web Hook Plugin,JUnit)
+Prometheus (For automated Monitoring)
+Grafana (For automated visualizaation)
+
+
+4.Notifications
+
+Email Extension Plugin
+
+
+5. Exception Handling
+
+
+Infra Team :: Infra Provisioning! -- 
+
+
+4 instances can be created using terraform
+
+Configure the servers :---> Ansible to install n config all the required tools in all these servers!
+
+Build, deployment Kubernetes cluster -- master, worknodes
+
+Prod Support/Monitoring Team -- Prometheus/grafana
+	cpu, memory, 
+
+
+
+Infra-Team		::: Server1 -- Terraform & Ansible
+
+	Will support :	Dev, build, deployment servers, Monitoring server
+
+	Terraform :
+		Using terraform provion all these servers.
+			jenkins_Master,Jenkins_Slave,KuberMaster,KubernetesWN1&2,Monitoring_server
+
+	Ansible : 
+		Using Ansible Configuration Management : Ansible :
+			Ansible Node :: jenkins_Master,Jenkins_Slave,KuberMaster,KubernetesWN1&2,Monitoring_server
+
+
+Dev_Team
+
+	CI/CD Pipeline :
+
+	scm-checkout --> build --> Deployment(Kubernetes)
+
+Release Mgmt Team 
+
+	By automate these ci/cd pipeline
+
+
+Production_Monitoring Team
+
+	To monitor the devops servers
