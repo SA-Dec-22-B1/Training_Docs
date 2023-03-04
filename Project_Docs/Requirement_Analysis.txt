@@ -118,6 +118,109 @@ Phase IV :
 	
 	
 
+###############
+Mar-04
+###############
+
+	Project :::
+	
+		How to build and Deploy Java Web-Application ?
+		
+		Development -- IDE 
+		
+		Pipeline Stages !!!
+		
+	CI/CD :::
+	
+	Jenkins - Master and DUMP all the tools in it.
+	
+	
+Architecture :::
+
+
+	Dev :::
+	
+		VS Code / Eclipse to create the project.
+		clone the proj. repo
+		GITHUB Web-hook shd trigger the pipeline!
+		
+	CI/CD :::
+	
+		Jenkins_Master :		git,jdk,jenkins 
+			Jenkins_Slave : (Build_Server) -- Build appln. artifacts & Docker Image	
+				build : 				git,jdk,maven,docker, valid user
+		
+		KubernetesMaster
+			Kubernetes-WN1&2
+		
+		
+	scm-checkout --> checkout src code
+
+	build		--> compile, test, create artifact *.war
+	
+	docker_Image build --> Dockerfile, docker build 
+	
+	docker_Publish to docker hub ---> docker hub login, push to docker registry
+	
+	Deploy to kubernetes --> Deployment manifest, NodePort!
+	
+	PODs	--> single instance of pod is created.
+	
+	Deployment Controller :::
+	
+	create multiple replicas of pod 5 
+	scale UP/DOWN 
+	Upgrade
+	Undo 
+	
+	
+usermod -aG docker devopsadmin			
+		
+		
+		Kubernetes Cluster :::: 
+			WN1&2   ==> 	
+			
+			Namespace!!! 
+			
+			QA
+			UAT 
+			PROD 
+		
+		
+
+	
+	Dynamic server provisioning ????
+	
+	Test apply.
+	
+	
+	
+	
+	
+	--> scm-checkout 
+	--> build 
+	--> Create artifacts 
+	--> Build Docker Image 
+	--> Publish to DockerHub
+	--> Terraform (Provision the Test_Server)
+	--> Ansible to config this Test_erver (docker)
+	--> Test_Server (Run the Docker Image)
+
+pipeline_Job1:
+
+	--> Terraform (Provision the Test_Server)
+	--> Ansible to config this Test_Server (docker)
+
+pipeline_Job2:
+	
+	--> scm-checkout 
+	--> build 
+	--> Create artifacts 
+	--> Build Docker Image 
+	--> Publish to DockerHub
+	--> Test_Server (Run the Docker Image)	
+	
+
 	
 
 
